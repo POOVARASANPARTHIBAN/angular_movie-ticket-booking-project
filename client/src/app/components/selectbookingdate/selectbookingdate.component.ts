@@ -27,7 +27,6 @@ export class SelectbookingdateComponent implements OnInit {
       console.log(res);
       this.movieDetails = []
     
-       // console.log(res.docs[i]);
         this.movieDetails.push(res.docs[0]);
         console.log(this.movieDetails);
         localStorage.setItem("ticketcost",res.docs[0].ticketcost);
@@ -37,7 +36,6 @@ export class SelectbookingdateComponent implements OnInit {
       this.selectdate.ticketcost = localStorage.getItem("ticketcost");
       this.selectdate.releasedate = localStorage.getItem("releasedate");
       this.selectdate.outdate = localStorage.getItem("outdate");
-      //console.log(res.docs);
      
     });
     

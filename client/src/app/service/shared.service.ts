@@ -96,7 +96,4 @@ export class SharedService {
     return this.http.post<any>(this.addfeedbackapi , data);
   }
   
-// getlogindata(data:any){
-//   return this.http.get<any>("http://localhost:8000/checkuser/"+data.email);
-// }
 }

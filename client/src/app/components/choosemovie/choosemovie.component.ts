@@ -26,12 +26,9 @@ choosemovie: any = {
       console.log(res);
       this.movielist = []
       for(var i=0;i<length;i++){
-       // console.log(res.docs[i]);
         this.movielist.push(res.docs[i]);
         console.log(this.movielist);
-      }
-      //console.log(res.docs);
-     
+      }     
     });
   }
 
@@ -40,7 +37,6 @@ choosemovie: any = {
       alert("please select moviename")
     }else{
     localStorage.setItem("moviename",this.choosemoviename.moviename);
-    
     this.route.navigate(['/selectdate']);
   }
 }

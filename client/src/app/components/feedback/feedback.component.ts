@@ -19,8 +19,7 @@ export class FeedbackComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  
+ 
   onSubmit(){
     console.log(this.feedback);
     if(this.feedback.message == ""){
@@ -32,5 +31,4 @@ export class FeedbackComponent implements OnInit {
    })
   }
   }
-
 }

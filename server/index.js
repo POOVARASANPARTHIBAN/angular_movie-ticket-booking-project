@@ -93,7 +93,7 @@ app.get("/chooselocation/:id", (req, res) => {
   var object = {
     selector: {
       theaterlocation: req.params.id,
-      type: "theater",
+      type: "theaters",
     },
   };
 
@@ -171,7 +171,6 @@ app.get("/getallmovie", (req, res) => {
 
   storedb.moviedb.find(object).then((data) => {
     if (data) {
-      //console.log(data);
       return res.json(data);
     } else {
       console.log("Feedbacks doesn't exist");

@@ -9,7 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,} from '@angular/common/http';
 import { UserhomepageComponent } from './components/userhomepage/userhomepage.component';
 import { AdminnavbarComponent } from './adminnavbar/adminnavbar.component';
 import { AdminhomeComponent } from './components/adminhome/adminhome/adminhome.component';
@@ -30,7 +30,7 @@ import { SeatselectionComponent } from './components/seatselection/seatselection
 import { BookingsummaryComponent } from './bookingsummary/bookingsummary.component';
 import { RetrievebookingComponent } from './components/adminhome/adminhome/retrievebooking/retrievebooking.component';
 import { MybookingsComponent } from './components/userhomepage/mybookings/mybookings.component';
-import { FooterComponent } from './components/footer/footer.component';
+// import { HttpCallInterceptor } from './service/interceptors.service';
 
 @NgModule({
   declarations: [
@@ -58,8 +58,7 @@ import { FooterComponent } from './components/footer/footer.component';
     SeatselectionComponent,
     BookingsummaryComponent,
     RetrievebookingComponent,
-    MybookingsComponent,
-    FooterComponent
+    MybookingsComponent
   ],
   imports: [
     BrowserModule,

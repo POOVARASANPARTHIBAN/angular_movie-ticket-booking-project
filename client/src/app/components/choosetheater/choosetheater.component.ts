@@ -21,20 +21,15 @@ export class ChoosetheaterComponent implements OnInit {
    
     this.sharedservice.chooselocation(this.choosetheater).subscribe((res) =>{
       var length = res.docs.length;
-     // console.log(res);
       this.theaterlist = []
       for(var i=0;i<length;i++){
-       // console.log(res.docs[i]);
         this.theaterlist.push(res.docs[i]);
         console.log(this.theaterlist);
       }
-      //console.log(res.docs);
      
-    });
-    
+    });   
   }
  
-
   onSubmit(){
     if(this.choosetheatername.theatername === ""){
       alert("please select theatername");
