@@ -1,0 +1,34 @@
+<app-usernavbar></app-usernavbar>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" #myForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="title">
+                    <h2>Choose Theater</h2>
+                </div>
+ 
+ <hr>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+                    <label>Theater :</label>
+                    <select class="input100" type="text" #theatername="ngModel" name="theatername"
+                        [(ngModel)]="choosetheatername.theatername" id="theatername">
+                        <option value="">Choose Theater</option>
+                        <option *ngFor="let theater of theaterlist" [value]="theater.theatername">
+                            {{theater.theatername}}</option>
+                    </select>
+
+                </div>
+                <br />
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn">
+                        View Movies
+                    </button>
+                </div>
+
+                <div class="flex-col-c p-t-40 p-b-40"></div>
+            </form>
+        </div>
+    </div>
+</div>

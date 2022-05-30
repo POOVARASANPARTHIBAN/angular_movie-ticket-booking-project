@@ -1,0 +1,90 @@
+
+.row{
+    margin-top: 3%;
+    margin-left: 75px;
+    display: flex;
+    height: 85%;
+    align-items: center;
+}
+.col{
+    flex-basis: 50%;   
+}
+
+.col h1{
+    color: white;
+    font-size: 80px;
+    margin-left: 17%;
+    font-family: georgia,sans-serif;
+}
+.col h2{
+    color: white;
+    font-size: 50px;
+    margin-left: 45px;
+    font-family: georgia,sans-serif;
+}
+.col h2 span{
+    color: rgb(212, 43, 43);
+    text-shadow: 2px 2px 5px black;
+    font-family: georgia,sans-serif;
+}
+.col p{
+    color: white;
+    font-size: 20px;
+    line-height: 45px;
+    margin-left: 35%;
+    font-family: Comic Sans MS;
+}
+
+.btn{
+    width: 180px;
+    color: #000;
+    font-size: 12px;
+    padding: 12px 0;
+    background: rgb(216, 196, 196);
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 0 2px red;
+    margin-left: 35%;
+    margin-top: 10%;
+}
+
+.btn:hover{
+    background-color: rgb(203, 35, 35);
+    box-shadow: 0 2px 0 2px black;
+    color: white;
+    transform: translateY(-5px);
+    transition: transform 0.2s;
+}
+
+.cards{
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    border-radius: 10px;
+    padding: 15px 35px;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 25px; 
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.5s;
+    border: 1px solid white;
+    
+}
+.card1{
+    background-image: url('../../../assets/images/don_movie.jpg');
+}
+.card2{
+    background-image: url('../../../assets/images/doctor-strange.jpg');
+}
+.card3{
+    background-image: url('../../../assets/images/beasT.jpg');
+}
+.card4 {
+    background-image: url('../../../assets/images/Cobra.jpg');
+}
+.cards:hover{
+    transform: translateY(-10px);
+} 

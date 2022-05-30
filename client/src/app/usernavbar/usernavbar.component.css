@@ -1,0 +1,26 @@
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: aqua;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.project__title {
+    color: white;
+    font-size: 38px;
+    margin-top: 11%;
+    margin-left: -23px;
+    font-family: cursive;
+    text-align: center;
+}
+
+.project__title .btn {
+    margin-left: -34px;
+    width: 8%;
+}

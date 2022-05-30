@@ -1,0 +1,49 @@
+<app-adminnavbar></app-adminnavbar>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" #myForm="ngForm">
+                     <div class="title">
+                    <h2>- My Profile -</h2>
+                </div>
+<hr>
+
+                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                    <input class="input100" type="text" value={{details.username}} #username="ngModel" name="username"
+                        [(ngModel)]="details.username" id="username" placeholder="Username" readonly />
+                    <span class="focus-input100"></span>
+
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                    <input class="input100" type="text" value={{details.email}} #email="ngModel" name="email"
+                        [(ngModel)]="details.email" id="email" placeholder="Email" readonly />
+                    <span class="focus-input100"></span>
+
+                </div>
+
+                <div class="wrap-input100 validate-input form-group password-div" data-validate="Please enter password">
+                    <input class="input100" type="text" value={{details.password}} #password="ngModel" name="password"
+                        [(ngModel)]="details.password" id="password" placeholder="Password" readonly />
+
+                    <span class="focus-input100"></span>
+                </div>
+                <br />
+                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                    <input class="input100" type="text" value={{details.address}} #address="ngModel" name="address"
+                        [(ngModel)]="details.address" id="address" placeholder="Address" readonly />
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                    <input class="input100" type="text" value={{details.mobile}} #mobile="ngModel" name="mobile"
+                        [(ngModel)]="details.mobile" id="mobile" placeholder="Mobile" readonly />
+                    <span class="focus-input100"></span>
+                </div>
+                <br />
+
+
+                <div class="flex-col-c p-t-40 p-b-40"></div>
+            </form>
+        </div>
+    </div>
+</div>

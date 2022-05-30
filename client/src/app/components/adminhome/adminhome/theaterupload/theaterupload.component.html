@@ -1,0 +1,55 @@
+<app-adminnavbar></app-adminnavbar>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" #myForm="ngForm" (ngSubmit)="OnSubmit()">
+                <div class="title">
+                    <h2>- Adding a Theater -</h2>
+                </div>
+<hr>
+
+                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                    <label>Theater Name :</label>
+                    <input class="input100" type="text" #moviename="ngModel" name="theatername"
+                        [(ngModel)]="theaterupload.theatername" id="theatername" placeholder="Theater name" />
+                    <span class="focus-input100"></span>
+
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter movieimageurl">
+                    <label>Theater id :</label>
+                    <input class="input100" type="text" #movieimageurl="ngModel" name="theaterid"
+                        [(ngModel)]="theaterupload.theaterid" id="theaterid" placeholder="Theater Id" />
+                    <span class="focus-input100"></span>
+
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter movievideourl">
+                    <label>Total Seats :</label>
+                    <input class="input100" type="text" #movievideourl="ngModel" name="totalseats"
+                        [(ngModel)]="theaterupload.totalseats" id="totalseats" placeholder="Total Seats" />
+                    <span class="focus-input100"></span>
+
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                    <label>Theater Location :</label>
+                    <input class="input100" type="text" #moviedescription="ngModel" name="theaterlocation"
+                        [(ngModel)]="theaterupload.theaterlocation" id="theaterlocation"
+                        placeholder="Theater location" />
+                    <span class="focus-input100"></span>
+
+                </div>
+
+                <br />
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="submit" routerLink="adminhome">
+                        Add Theater
+                    </button>
+                </div>
+
+                <div class="flex-col-c p-t-40 p-b-40"></div>
+            </form>
+        </div>
+    </div>
+</div>

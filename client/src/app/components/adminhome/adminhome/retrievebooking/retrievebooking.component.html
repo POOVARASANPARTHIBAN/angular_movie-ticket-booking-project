@@ -1,0 +1,49 @@
+<app-adminnavbar></app-adminnavbar>
+<div class="container">
+  <table class="table table-striped table-bordered border-primary" id="table">
+    <thead class="bg-light">
+      <tr>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Movie Name</th>
+        <th>Movie Watchers</th>
+        <th>Booking Date</th>
+        <th>Mobile</th>
+        <th>Totalseats</th>
+        <th>Seat Names</th>
+        <th>Total Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>
+          {{item.username}}
+        </td>
+        <td>
+          {{item.email}}
+        </td>
+        <td>
+          {{item.moviename}}
+        </td>
+        <td>
+          {{item.moviewatchers}}
+        </td>
+        <td>
+          {{item.bookingdate}}
+        </td>
+        <td>
+          {{item.mobile}}
+        </td>
+        <td>
+          {{item.totalseats}}
+        </td>
+        <td>
+          {{item.seatnames}}
+        </td>
+        <td>
+          {{item.totalcost}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

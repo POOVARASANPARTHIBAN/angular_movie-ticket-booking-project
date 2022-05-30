@@ -1,0 +1,48 @@
+import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { SharedService } from 'src/app/service/shared.service';
+
+@Component({
+  selector: 'app-choosemovie',
+  templateUrl: './choosemovie.component.html',
+  styleUrls: ['./choosemovie.component.css']
+})
+export class ChoosemovieComponent implements OnInit {
+
+  constructor(private sharedservice:SharedService, private route:Router) { }
+choosemovie: any = {
+    theatername:localStorage.getItem("theatername")
+  }
+  choosemoviename: any = {
+    moviename:'',
+    ticketcost:'',
+    releasedate:Date.now,
+    outdate:Date.now
+  }
+  movielist:any=[];
+  ngOnInit(): void {
+     this.sharedservice.choosemovie(this.choosemovie).subscribe((res) =>{
+      var length = res.docs.length;
+      console.log(res);
+      this.movielist = []
+      for(var i=0;i<length;i++){
+       // console.log(res.docs[i]);
+        this.movielist.push(res.docs[i]);
+        console.log(this.movielist);
+      }
+      //console.log(res.docs);
+     
+    });
+  }
+
+  onSubmit(){
+    if(this.choosemoviename.moviename === ""){
+      alert("please select moviename")
+    }else{
+    localStorage.setItem("moviename",this.choosemoviename.moviename);
+    
+    this.route.navigate(['/selectdate']);
+  }
+}
+
+}
