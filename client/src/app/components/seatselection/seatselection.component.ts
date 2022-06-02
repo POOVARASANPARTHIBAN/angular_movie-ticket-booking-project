@@ -56,22 +56,16 @@ export class SeatselectionComponent implements OnInit {
       $(".alert-message").show();
        this.sharedservice.getdata(this.disabledatas).subscribe((res) =>{
       var length = res.docs.length;
-     // console.log(res);
       this.datalist = []
       for(var i=0;i<length;i++){
-       // console.log(res.docs[i]);
        var bookedseats = res.docs[i].seatnames;
         var array = bookedseats.split(",");
         this.datalist.push(res.docs[i].seatnames);
         for (var i = 0; i < array.length; i++) {
-        //  alert(array[i]);
 
           $("#" + array[i]).attr("disabled", true);
         }
-        //console.log(this.datalist);
-      }
-      //console.log(res.docs);
-      
+      }      
      
     });
     }
@@ -95,12 +89,11 @@ export class SeatselectionComponent implements OnInit {
       allNameVals.push(username);
       allNumberVals.push(totalseats);
       
-      for(var i=0;i<$("#seatsBlock :checked").length;i++){
+      for(var  i=0;i<$("#seatsBlock :checked").length;i++){
         allSeatsVals.push($("#seatsBlock :checked")[i].value);
         this.allSeatarray.push($("#seatsBlock :checked")[i].value);
       }
       console.log(this.allSeatarray);
-      //Displaying
       $("#nameDisplay").val(allNameVals);
       $("#NumberDisplay").val(allNumberVals);
       $("#seatsDisplay").val(allSeatsVals);

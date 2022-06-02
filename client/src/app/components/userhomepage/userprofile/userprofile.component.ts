@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserprofileComponent implements OnInit {
 
-  constructor() { }
-
   id:any;
   showPassword: boolean = false;
 

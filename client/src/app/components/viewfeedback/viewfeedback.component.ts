@@ -8,9 +8,7 @@ import { SharedService } from 'src/app/service/shared.service';
   styleUrls: ['./viewfeedback.component.css']
 })
 export class ViewfeedbackComponent implements OnInit {
-
-
-
+  
   constructor(private sharedservice : SharedService) { }
   
   ngOnInit(): void {

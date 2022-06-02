@@ -18,7 +18,8 @@ export class FeedbackComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
+    // TODO document why this method 'ngOnInit' is empty
+   }
  
   onSubmit(){
     console.log(this.feedback);
