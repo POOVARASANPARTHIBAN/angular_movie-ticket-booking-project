@@ -4,9 +4,6 @@ import { HttpClient,HttpClientModule } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SharedService {
-  static addbooking(bookingdata: { currentdate: () => number; username: string | null; email: string | null; mobile: string | null; bookingdate: string | null; moviename: string | null; moviewatchers: string | null; totalseats: string | null; seatnames: string | null; totalcost: number; }) {
-    throw new Error('Method not implemented.');
-  }
 
   private readonly apiurl = 'http://localhost:8000/postuser';
   private readonly loginapi = 'http://localhost:8000/checkuser/';
