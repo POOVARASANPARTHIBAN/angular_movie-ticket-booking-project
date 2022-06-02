@@ -42,7 +42,7 @@
                 </div>
                 <div class="movie-update">
                     <label>Select Theater :</label>
-                    <select class="input" type="text" #theaterId="ngModel" name="theaterId"
+                    <select class="input" type="text" #theatername="ngModel" name="theaterId"
                         [(ngModel)]="movieupload.theaterId" id="theaterId" placeholder="Theater Id" >
                         <option value="">Select Theater</option>
                         <option *ngFor="let item of data" [value]="item._id">{{item.theatername}}</option>
