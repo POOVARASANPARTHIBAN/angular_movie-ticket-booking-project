@@ -16,9 +16,9 @@ export class LoginComponent implements OnInit {
     email:'',
     password:''
   }
-
+temp : any = {};
   ngOnInit(): void {
-
+   
   }
   onSubmit(){
     if(this.login.email === "admin@gmail.com" && this.login.password === "admin"){
@@ -29,25 +29,24 @@ export class LoginComponent implements OnInit {
        localStorage.setItem("adminmobile","9360846143");
       this.route.navigate(['/viewmovie']);
     }else{
-        // console.log(this.login);
      this.sharedservice.login(this.login).subscribe((res) =>{
-      
-      //console.log(res.docs[0].email);
-      if(res.docs[0].email === this.login.email && res.docs[0].password === this.login.password){
-        localStorage.setItem("username",res.docs[0].username);
-       localStorage.setItem("email",res.docs[0].email);
-       localStorage.setItem("password",res.docs[0].password);
-       localStorage.setItem("address",res.docs[0].address);
-       localStorage.setItem("mobile",res.docs[0].mobile);
+     console.log("res",res);
+     if(res.docs[0].email === this.login.email && res.docs[0].password === this.login.password){
+      console.log(res.docs[0]);
+      this.temp  = res.docs[0];
+       localStorage.setItem("username",this.temp.username);
+       localStorage.setItem("email",this.temp.email);
+       localStorage.setItem("password",this.temp.password);
+       localStorage.setItem("address",this.temp.address);
+       localStorage.setItem("mobile",this.temp.mobile)
+       localStorage.setItem("_id",this.temp._id)
+       localStorage.setItem("_rev",this.temp._rev)
        this.route.navigate(['/userhome']);
       }else{
         alert("Invalid Email or Password");
-      }
-      
-     //alert("Account Created Successfully");
+      }  
    })
-    }
-   
+    }  
   } 
 public data : signup[]=[];
 

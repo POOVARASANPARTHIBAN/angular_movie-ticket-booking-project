@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BookingsummaryComponent } from './bookingsummary/bookingsummary.component';
 import { AdminhomeComponent } from './components/adminhome/adminhome/adminhome.component';
 import { AdminprofileComponent } from './components/adminhome/adminhome/adminprofile/adminprofile.component';
+import { LocationuploadComponent } from './components/adminhome/adminhome/locationupload/locationupload.component';
 import { MovieuploadComponent } from './components/adminhome/adminhome/movieupload/movieupload.component';
 import { RetrievebookingComponent } from './components/adminhome/adminhome/retrievebooking/retrievebooking.component';
 import { TheateruploadComponent } from './components/adminhome/adminhome/theaterupload/theaterupload.component';
@@ -43,7 +44,9 @@ const routes: Routes = [
   { path:'login',component:LoginComponent },
   { path:'signup',component:SignupComponent },
   { path:'home',component:HomeComponent },
+  { path:'locationupload', component:LocationuploadComponent},
   { path:'',component:HomeComponent }
+  
  
 ];
 

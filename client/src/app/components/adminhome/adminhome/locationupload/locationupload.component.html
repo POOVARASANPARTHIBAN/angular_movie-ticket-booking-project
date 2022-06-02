@@ -1,0 +1,28 @@
+
+<app-adminnavbar></app-adminnavbar>
+<div class="limiter">
+    <div class="container">
+        <div class="wrap">
+            <form class="conain-form" #myForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="title">
+                    <h2>- Add a Location -</h2>
+                </div>
+<hr>
+                <div class="location">
+                    <label>Location :</label>
+                    <input class="input" type="text" #locationname="ngModel" name="locationname" required
+                        [(ngModel)]="location.locationName" id="locationname" placeholder="Location name"/>
+                        <div *ngIf="locationname.invalid && (locationname.dirty || locationname.touched)" class="alert">
+                            <div *ngIf="locationname.errors?.required" style="color: red">*LOCATION is required.</div>
+                        </div>
+                </div>
+<br />
+                <div class="container-form-btn">
+                    <button class="form-btn" type="submit" routerLink="adminhome">
+                        Add Location
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

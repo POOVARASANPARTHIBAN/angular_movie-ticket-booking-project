@@ -11,7 +11,7 @@ export class ChoosemovieComponent implements OnInit {
 
   constructor(private sharedservice:SharedService, private route:Router) { }
 choosemovie: any = {
-    theatername:localStorage.getItem("theatername")
+    theaterId:localStorage.getItem("theaterId")
   }
   choosemoviename: any = {
     moviename:'',
@@ -20,6 +20,7 @@ choosemovie: any = {
     outdate:Date.now
   }
   movielist:any=[];
+  
   ngOnInit(): void {
      this.sharedservice.choosemovie(this.choosemovie).subscribe((res) =>{
       var length = res.docs.length;

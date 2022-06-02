@@ -1,3 +1,38 @@
-.container-login100 {
-    background-color: transparent;
+
+.limiter{
+    margin-left: 30%;
+    margin-top: 5%;
+    max-width: 400px;
+    border-radius: 5px;
+    text-align: center;
+
 }
+label{
+    color: rgb(0, 0, 0);
+    font-family: 'papyrus';
+}
+
+.title{
+    padding: 8px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'papyrus';
+
+}
+
+  input{
+    height: 25px;
+    width: 60%;
+    margin: 15px;
+    border-radius: 10px;
+   
+  }
+
+  .container {
+      background-color: rgba(240, 230, 230, 0.438);
+      border: none;
+      width: 550px;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+    }
+   

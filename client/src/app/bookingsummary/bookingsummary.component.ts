@@ -16,12 +16,13 @@ bookingdata:any = {
     email:  localStorage.getItem("email"),
     mobile: localStorage.getItem("mobile"),
     bookingdate: localStorage.getItem("bookingdate"),
-    theatername:localStorage.getItem("theatername"),
+    theaterId:localStorage.getItem("theaterId"),
     moviename: localStorage.getItem("moviename"),
     moviewatchers: localStorage.getItem("moviewatchers"),
     totalseats: localStorage.getItem("totalseats"),
     seatnames: localStorage.getItem("seatnames"),
-    totalcost: Number(localStorage.getItem("ticketcost")) * Number(localStorage.getItem("totalseats"))
+    totalcost: Number(localStorage.getItem("ticketcost")) * Number(localStorage.getItem("totalseats")),
+    users : localStorage.getItem("_id")
   }
   ngOnInit(): void {
    

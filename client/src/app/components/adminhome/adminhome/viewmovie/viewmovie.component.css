@@ -1,22 +1,44 @@
-.column {
+.header{
+        text-align: center;
+        padding-left: 15px;
+        color: white;
+        font-family:cursive;
+}.column {
     float: left;
     width: 25%;
     padding: 0 10px;
 }
-
-/* Remove extra left and right margins, due to padding */
 .row {
     margin: 0 -5px;
 }
-
-/* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
+.btn{
+    width: 180px;
+    color: #000;
+    font-size: 12px;
+    padding: 12px 0;
+    background: rgb(216, 196, 196);
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 0 2px red;
+    margin-bottom: 20px;
+}
 
-/* Responsive columns */
+.btn:hover{
+    background-color: rgb(203, 35, 35);
+    box-shadow: 0 2px 0 2px black;
+    color: white;
+    transform: translateY(-5px);
+    transition: transform 0.2s;
+}
+
+
 @media screen and (max-width: 600px) {
     .column {
         width: 100%;
@@ -24,11 +46,9 @@
         margin-bottom: 20px;
     }
 }
-
-/* Style the counter cards */
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 16px;
+    box-shadow: 0 4px 8px 0 rgba(187, 181, 181, 0.788);
+    padding: 12px;
     text-align: center;
     background-color: transparent;
 }

@@ -1,80 +1,71 @@
 <app-usernavbar></app-usernavbar>
 <div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" #myForm="ngForm">
+    <div class="container">
+        <div class="wrap">
+            <form class="contain-form" #myForm="ngForm">
                 <div class="title">
                     <h2>- MY TICKET -</h2>
                 </div>
 <hr>
-
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="booking"  >
                     <label>User Name :</label>
-                    <input class="input100" type="text" #username="ngModel" name="username"
-                        [(ngModel)]="bookingdata.username" id="username" placeholder="Username" readonly />
-                    <span class="focus-input100"></span>
-
+                    <input class="input" type="text" #username="ngModel" name="username"
+                        [(ngModel)]="bookingdata.username" id="username"  readonly />
                 </div>
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="booking"  >
                     <label>Mobile :</label>
-                    <input class="input100" type="text" #mobile="ngModel" name="mobile" [(ngModel)]="bookingdata.mobile"
-                        id="mobile" placeholder="Mobile" />
-                    <span class="focus-input100"></span>
+                    <input class="input" type="text" #mobile="ngModel" name="mobile" [(ngModel)]="bookingdata.mobile"
+                        id="mobile" readonly />      
                 </div>
-
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="booking"  >
                     <label>Email :</label>
-                    <input class="input100" type="text" #email="ngModel" name="email" [(ngModel)]="bookingdata.email"
-                        id="email" placeholder="Email" readonly />
-                    <span class="focus-input100"></span>
-
+                    <input class="input" type="text" #email="ngModel" name="email" [(ngModel)]="bookingdata.email"
+                        id="email"  readonly />
                 </div>
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="booking"  >
                     <label>Movie Name :</label>
-                    <input class="input100" type="text" #moviename="ngModel" name="moviename"
-                        [(ngModel)]="bookingdata.moviename" id="moviename" placeholder="moviename" readonly />
-                    <span class="focus-input100"></span>
+                    <input class="input" type="text" #moviename="ngModel" name="moviename"
+                        [(ngModel)]="bookingdata.moviename" id="moviename"  readonly />   
                 </div>
-
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="booking"  >
                     <label>Booking Date :</label>
-                    <input class="input100" type="text" #bookingdate="ngModel" name="bookingdate"
-                        [(ngModel)]="bookingdata.bookingdate" id="bookingdate" placeholder="bookingdate" />
-                    <span class="focus-input100"></span>
-                </div>
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
-                    <label>Watchers :</label>
-                    <input class="input100" type="text" #moviewatchers="ngModel" name="moviewatchers"
-                        [(ngModel)]="bookingdata.moviewatchers" id="moviewatchers" placeholder="moviewatchers" />
-                    <span class="focus-input100"></span>
+                    <input class="input" type="text" #bookingdate="ngModel" name="bookingdate"
+                        [(ngModel)]="bookingdata.bookingdate" id="bookingdate" readonly />       
                 </div>
 
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="booking"  >
+                    <label>Theater Name :</label>
+                    <input class="input" type="text" #theaterId="ngModel" name="theaterId"
+                        [(ngModel)]="bookingdata.theaterId" id="theaterId" readonly />       
+                </div>
+
+                <div class="booking"  >
+                    <label>Watchers :</label>
+                    <input class="input" type="text" #moviewatchers="ngModel" name="moviewatchers"
+                        [(ngModel)]="bookingdata.moviewatchers" id="moviewatchers" readonly />   
+                </div>
+
+                <div class="booking"  >
                     <label>TotalSeats :</label>
-                    <input class="input100" type="text" #totalseats="ngModel" name="totalseats"
-                        [(ngModel)]="bookingdata.totalseats" id="totalseats" placeholder="totalseats" />
-                    <span class="focus-input100"></span>
+                    <input class="input" type="text" #totalseats="ngModel" name="totalseats"
+                        [(ngModel)]="bookingdata.totalseats" id="totalseats" readonly />    
                 </div>
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="booking"  >
                     <label>SeatNames :</label>
-                    <input class="input100" type="text" #seatnames="ngModel" name="seatnames"
-                        [(ngModel)]="bookingdata.seatnames" id="seatnames" placeholder="seatname" />
-                    <span class="focus-input100"></span>
+                    <input class="input" type="text" #seatnames="ngModel" name="seatnames"
+                        [(ngModel)]="bookingdata.seatnames" id="seatnames" readonly />     
                 </div>
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="booking"  >
                     <label>Total Cost :</label>
-                    <input class="input100" type="text" #totalcost="ngModel" name="totalcost"
-                        [(ngModel)]="bookingdata.totalcost" id="totalcost" placeholder="totalcost" />
-                    <span class="focus-input100"></span>
+                    <input class="input" type="text" #totalcost="ngModel" name="totalcost"
+                        [(ngModel)]="bookingdata.totalcost" id="totalcost" readonly /> 
                 </div>
                 <br>
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" type="submit" (click)="insertbooking()">
+                <div class="container-form-btn">
+                    <button class="form-btn" type="submit" (click)="insertbooking()">
                         Return to Home
                     </button>
                 </div>
-
-                <div class="flex-col-c p-t-40 p-b-40"></div>
             </form>
         </div>
     </div>

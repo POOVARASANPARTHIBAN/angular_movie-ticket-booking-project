@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
-
+import { ActivatedRoute } from '@angular/router';
+import { location } from 'Models/location';
 @Component({
   selector: 'app-theaterupload',
   templateUrl: './theaterupload.component.html',
@@ -8,27 +9,32 @@ import { SharedService } from 'src/app/service/shared.service';
 })
 export class TheateruploadComponent implements OnInit {
 
-  constructor(private sharedservice : SharedService) { }
+  constructor(private sharedservice : SharedService,private acrouter:ActivatedRoute) { }
 
   theaterupload : any = {
     _id : '',
     theatername : '',
-    theaterid : '',
     totalseats : '',
     theaterlocation : '',
   }
 
   ngOnInit(): void {
+    this.sharedservice.getalllocation().subscribe((data)=>{
+      var length = data.docs.length;
+      console.log(data)
+      for(var i = 0;i<length;i++)
+      {
+        this.data.push(data.docs[i])
+      }
+    })
   }
    OnSubmit(){
     console.log(this.theaterupload);
-    if(this.theaterupload.theatername === "" || this.theaterupload.theaterid === "" || this.theaterupload.totalseats === "" ||this.theaterupload.theaterlocation === ""){
-      alert("please fill all fields");
-    }else{
    this.sharedservice.addtheater(this.theaterupload).subscribe((data) =>{
      console.log(data);
      alert("Theater Uploaded Successfully!!");
    })}
-  }
+  
 
-}
+  public data:location[] = [];
+  }

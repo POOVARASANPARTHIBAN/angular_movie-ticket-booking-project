@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { SharedService } from 'src/app/service/shared.service';
 
 @Component({

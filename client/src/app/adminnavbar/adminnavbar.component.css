@@ -1,26 +1,20 @@
 .navbar-inverse .navbar-nav>li>a {
     color: white;
 }
-
 .navbar-inverse .navbar-nav>li>a:hover {
-    color: aqua;
+    color: rgb(209, 24, 24);
     background-color: transparent;
 }
-
 .navbar-inverse .navbar-brand {
-    color: white;
+    color: rgb(223, 30, 30);
 }
-
 .project__title {
     color: white;
     font-size: 38px;
     margin-top: 11%;
-    margin-left: -23px;
     font-family: cursive;
     text-align: center;
 }
-
 .project__title .btn {
-    margin-left: -34px;
     width: 8%;
 }

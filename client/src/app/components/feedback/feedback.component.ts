@@ -27,7 +27,7 @@ export class FeedbackComponent implements OnInit {
     }else{
    this.sharedservice.addfeedback(this.feedback).subscribe((data) =>{
      console.log(data);
-     alert("Movie Uploaded Successfully!!");
+     alert("Feedback Uploaded Successfully!!");
    })
   }
   }

@@ -1,13 +1,8 @@
 <div>
     <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
+        <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">POOVARASAN MULTIPLEX BOOKING SYSTEM</a>
+                <a class="navbar-brand" href="#">POOVARASAN</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -24,6 +19,10 @@
                         <a [routerLink]="['../theaterupload']"><span
                                 class="glyphicon glyphicon-upload"></span>&nbsp;&nbsp;Theater
                             Upload</a>
+                    </li>
+                    <li><a [routerLink]="['../locationupload']"><span
+                        class="glyphicon glyphicon-upload"></span>&nbsp;&nbsp;Location
+                    Upload</a>
                     </li>
                     <li>
                         <a [routerLink]="['../retrievebooking']"><span

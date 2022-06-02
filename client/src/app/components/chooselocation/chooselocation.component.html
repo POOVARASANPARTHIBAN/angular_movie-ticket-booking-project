@@ -1,33 +1,27 @@
+
 <div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" #myForm="ngForm" (ngSubmit)="onSubmit()">
-               <div class="title">
-                   <h2>Choose Location</h2>
-               </div>
+    <div class="container">
+        <div class="wrap">
+            <form class="contain-form" #myForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="title">
+                    <h2>- Choose Location -</h2>
+                </div>
 <hr>
-                <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+                <div class="location" data-validate="Please enter username">
                     <label>Location :</label>
                     <select class="input100" type="text" #location="ngModel" name="location"
-                        [(ngModel)]="chooselocation.location" id="location">
+                        [(ngModel)]="chooselocation.locationId" id="location">
                         <option value="">Select Location</option>
-                        <option value="Madurai">Madurai</option>
-                        <option value="Chennai">Chennai</option>
-                        <option value="Salem">Salem</option>
+                        <option *ngFor="let item of data" [value]="item._id">{{item.locationName}}</option>
                     </select>
-
-                    <span class="focus-input100"></span>
-
                 </div>
                 <br />
 
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                <div class="container-form-btn">
+                    <button class="form-btn">
                         View Theater
                     </button>
                 </div>
-
-                <div class="flex-col-c p-t-40 p-b-40"></div>
             </form>
         </div>
     </div>

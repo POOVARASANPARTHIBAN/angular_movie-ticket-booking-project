@@ -27,7 +27,6 @@ export class ViewmovieComponent implements OnInit {
 
   deleteMovie(_id:any,_rev:any){
 
-   // alert(moviename);
      this.sharedservice.deleteMovie(_id,_rev).subscribe((data) =>{
      console.log(data);
      window.location.reload();

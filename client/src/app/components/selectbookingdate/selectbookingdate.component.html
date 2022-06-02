@@ -39,9 +39,10 @@
                 <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
                     <label> Choose Date : </label>
                     <input class="input100" type="date" #bookingdate="ngModel" name="bookingdate"
-                        [(ngModel)]="choosemovie.bookingdate" id="bookingdate" placeholder="Booking date"
-                        [min]="selectdate.releasedate" [max]="selectdate.outdate" />
+                        [(ngModel)]="choosemovie.bookingdate" id="txtDate" placeholder="Booking date"
+                        min="{{mindate}}" [max]="selectdate.outdate"/>
                     <span class="focus-input100"></span>
+
                 </div>
 
                 <br />

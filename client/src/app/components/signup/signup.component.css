@@ -22,20 +22,19 @@ label{
 
   input{
     height: 25px;
-    width: 60%;
     margin: 10px;
+    width: 60%;
     border-radius: 10px;
-   
-  }
+  } 
 
-  .container-login100 {
+  .container{
       background-color: rgba(240, 230, 230, 0.438);
       border: none;
       width: 550px;
       margin-bottom: 1.5rem;
       border-radius: 10px;
     }
-    .login100-form-btn{
+    .form-btn{
       width: 180px;
       color: #000;
       font-size: 12px;
@@ -50,18 +49,10 @@ label{
       margin-top: -10px;
   }
   
-  .login100-form-btn:hover{
+  .form-btn:hover{
       background-color: rgb(203, 35, 35);
       box-shadow: 0 2px 0 2px black;
       color: white;
       transform: translateY(-5px);
       transition: transform 0.2s;
   }
-
-
-
-
-
-
-
-

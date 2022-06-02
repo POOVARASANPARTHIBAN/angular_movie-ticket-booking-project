@@ -1,93 +1,94 @@
 <app-adminnavbar></app-adminnavbar>
 <div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" #myForm="ngForm" (ngSubmit)="OnSubmit()">
+    <div class="container">
+        <div class="wrap">
+            <form class="contain-form" #myForm="ngForm" (ngSubmit)="OnSubmit()">
                 <div class="title">
                     <h2>- Adding a Movie -</h2>
                 </div>
 <hr>
-
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="movie-update">
                     <label>Movie Name :</label>
-                    <input class="input100" type="text" #moviename="ngModel" name="moviename"
-                        [(ngModel)]="movieupload.moviename" id="moviename" placeholder="Movie name" />
-                    <span class="focus-input100"></span>
-
+                    <input class="input" type="text" #moviename="ngModel" name="moviename" required
+                        [(ngModel)]="movieupload.moviename" id="moviename"/>
+                        <div *ngIf="moviename.invalid && (moviename.dirty || moviename.touched)" class="alert">
+                            <div *ngIf="moviename.errors?.required" style="color: red">*TITLE is required.</div>
+                        </div>
                 </div>
 
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter movieimageurl">
+                <div class="movie-update">
                     <label>Movie Imageurl :</label>
-                    <input class="input100" type="text" #movieimageurl="ngModel" name="movieimageurl"
-                        [(ngModel)]="movieupload.movieimageurl" id="movieimageurl" placeholder="movieimageurl" />
-                    <span class="focus-input100"></span>
-
+                    <input class="input" type="text" #movieimageurl="ngModel" name="movieimageurl" required
+                        [(ngModel)]="movieupload.movieimageurl" id="movieimageurl"/>
+                        <div *ngIf="movieimageurl.invalid && (movieimageurl.dirty || movieimageurl.touched)" class="alert">
+                            <div *ngIf="movieimageurl.errors?.required" style="color: red">*IMAGE is required.</div>
+                        </div>
                 </div>
-
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter movievideourl">
+                <div class="movie-update">
                     <label>Movie Videourl :</label>
-                    <input class="input100" type="text" #movievideourl="ngModel" name="movievideourl"
-                        [(ngModel)]="movieupload.movievideourl" id="movievideourl" placeholder="movievideourl" />
-                    <span class="focus-input100"></span>
-
+                    <input class="input" type="text" #movievideourl="ngModel" name="movievideourl" required
+                        [(ngModel)]="movieupload.movievideourl" id="movievideourl"/>
+                        <div *ngIf="movievideourl.invalid && (movievideourl.dirty || movievideourl.touched)" class="alert">
+                            <div *ngIf="movievideourl.errors?.required" style="color: red">*VIDEO is required.</div>
+                        </div>
                 </div>
-
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username"> 
+                <div class="movie-update"> 
                     <label>Movie description :</label>
-                    <input class="input100" type="text" #moviedescription="ngModel" name="moviedescription"
-                        [(ngModel)]="movieupload.moviedescription" id="moviedescription"
-                        placeholder="Movie description" />
-                    <span class="focus-input100"></span>
-
+                    <input class="input" type="text" #moviedescription="ngModel" name="moviedescription" required
+                        [(ngModel)]="movieupload.moviedescription" id="moviedescription" />
+                        <div *ngIf="moviedescription.invalid && (moviedescription.dirty || moviedescription.touched)" class="alert">
+                            <div *ngIf="moviedescription.errors?.required" style="color: red">*DESCRIPTION is required.</div>
+                        </div>
                 </div>
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
-                    <label>Theater Name :</label>
-                    <input class="input100" type="text" #theatername="ngModel" name="theatername"
-                        [(ngModel)]="movieupload.theatername" id="theatername" placeholder="Theater Name" />
-                    <span class="focus-input100"></span>
-
+                <div class="movie-update">
+                    <label>Select Theater :</label>
+                    <select class="input" type="text" #theaterId="ngModel" name="theaterId"
+                        [(ngModel)]="movieupload.theaterId" id="theaterId" placeholder="Theater Id" >
+                        <option value="">Select Theater</option>
+                        <option *ngFor="let item of data" [value]="item._id">{{item.theatername}}</option>
+                    </select>
                 </div>
-
-                <div class="wrap-input100 validate-input form-group" data-validate="Please enter ticketcost">
+                <div class="movie-update">
                     <label>Ticket Cost :</label>
-                    <input class="input100" type="ticketcost" #ticketcost="ngModel" name="ticketcost"
-                        [(ngModel)]="movieupload.ticketcost" id="ticketcost" placeholder="ticketcost" />
-                    <span class="focus-input100"></span>
+                    <input class="input" type="ticketcost" #ticketcost="ngModel" name="ticketcost" required
+                        [(ngModel)]="movieupload.ticketcost" id="ticketcost"/>
+                        <div *ngIf="ticketcost.invalid && (ticketcost.dirty || ticketcost.touched)" class="alert">
+                            <div *ngIf="ticketcost.errors?.required" style="color: red">*TICKETCOST is required.</div>
+                        </div>
+                        
                 </div>
-                <br />
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="movie-update">
                     <label>Actor Name :</label>
-                    <input class="input100" type="text" #actorname="ngModel" name="actorname"
-                        [(ngModel)]="movieupload.actorname" id="actorname" placeholder="actorname" />
-                    <span class="focus-input100"></span>
+                    <input class="input" type="text" #actorname="ngModel" name="actorname" required
+                        [(ngModel)]="movieupload.actorname" id="actorname"/>
+                        <div *ngIf="actorname.invalid && (actorname.dirty || actorname.touched)" class="alert">
+                            <div *ngIf="actorname.errors?.required" style="color: red">*ACTOR NAME is required.</div>
+                        </div>
                 </div>
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="wmovie-update">
                     <label>Director Name :</label>
-                    <input class="input100" type="text" #directorname="ngModel" name="directorname"
-                        [(ngModel)]="movieupload.directorname" id="directorname" placeholder="directorname" />
-                    <span class="focus-input100"></span>
+                    <input class="input" type="text" #directorname="ngModel" name="directorname" required
+                        [(ngModel)]="movieupload.directorname" id="directorname" />
+                        <div *ngIf="directorname.invalid && (directorname.dirty || directorname.touched)" class="alert">
+                            <div *ngIf="directorname.errors?.required" style="color: red">*DIRECTOR NAME is required.</div>
+                        </div>
                 </div>
-                <br />
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="movie-update">
                     <label>Start Date :</label>
-                    <input class="input100" type="date" #startdate="ngModel" name="startdate"
+                    <input class="input" type="date" #startdate="ngModel" name="startdate"
                         [(ngModel)]="movieupload.startdate" id="startdate" placeholder="startdate" />
-                    <span class="focus-input100"></span>
                 </div>
-                <div class="wrap-input100 validate-input m-b-16 form-group" data-validate="Please enter username">
+                <div class="movie-update">
                     <label>End Date :</label>
-                    <input class="input100" type="date" #enddate="ngModel" name="enddate"
+                    <input class="input" type="date" #enddate="ngModel" name="enddate"
                         [(ngModel)]="movieupload.enddate" id="enddate" placeholder="enddate" />
-                    <span class="focus-input100"></span>
                 </div>
-                <br />
-                <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" type="submit" routerLink="adminhome">
+                <br>
+                <div class="container-form-btn">
+                    <button class="form-btn" type="submit" routerLink="adminhome">
                         Add Movie
                     </button>
                 </div>
-
-                <div class="flex-col-c p-t-40 p-b-40"></div>
             </form>
         </div>
     </div>

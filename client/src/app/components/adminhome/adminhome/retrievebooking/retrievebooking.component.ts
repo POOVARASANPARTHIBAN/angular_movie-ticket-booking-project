@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { retrievebooking } from 'Models/retrivebooking';
 import { SharedService } from 'src/app/service/shared.service';
-
+import * as lodash  from 'lodash';
 @Component({
   selector: 'app-retrievebooking',
   templateUrl: './retrievebooking.component.html',
   styleUrls: ['./retrievebooking.component.css']
 })
 export class RetrievebookingComponent implements OnInit {
+  arr: any;
 
   constructor(private sharedservice : SharedService, private router : Router) { }
 
@@ -16,14 +17,11 @@ export class RetrievebookingComponent implements OnInit {
     this.sharedservice.getallBooking().subscribe(data=>{
       var length = data.docs.length;
       console.log(data)
-      for(var i = 0;i<length;i++)
-      {
-        this.data.push(data.docs[i])
-      }
-      console.log(this.data);
-    })
-  }
+      this.data = lodash.sortBy(data.docs,'lastmodifieddate')
+            console.log(this.data);
+    });
 
+  }
   public data: retrievebooking[] = [];
 
 }

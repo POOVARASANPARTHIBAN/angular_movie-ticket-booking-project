@@ -25,11 +25,42 @@ app.post("/postuser", (request, response) => {
     type: "users",
   };
 
-  dbconnection.insert(object);
-  console.log("Data added");
+  dbconnection
+    .insert(object)
+    .then((data) => {
+      response.send(data);
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
-app.post("/addbooking", (request, response) => {
+app.post("/addlocation", (request, response) => {
+  try {
+    console.log(request);
+    var object = {
+      locationName: request.body.locationName,
+      type: "locations",
+    };
+
+    if (object.locationName == "") {
+      res.send("hiiii");
+    }
+
+    dbconnection
+      .insert(object)
+      .then((data) => {
+        response.send(data);
+      })
+      .catch((err) => {
+        response.send(err.message);
+      });
+  } catch (err) {
+    response.send(err);
+  }
+});
+
+app.post("/addbooking/", (request, response) => {
   console.log(request);
   var object = {
     username: request.body.username,
@@ -43,10 +74,18 @@ app.post("/addbooking", (request, response) => {
     seatnames: request.body.seatnames,
     totalcost: request.body.totalcost,
     type: "bookings",
+    user: request.body.users,
+    lastmodifieddate: new Date(),
   };
 
-  dbconnection.insert(object);
-  console.log("Data added");
+  dbconnection
+    .insert(object)
+    .then((data) => {
+      response.send(data);
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.post("/addmovie", (request, response) => {
@@ -56,7 +95,7 @@ app.post("/addmovie", (request, response) => {
     movieimageurl: request.body.movieimageurl,
     movievideourl: request.body.movievideourl,
     moviedescription: request.body.moviedescription,
-    theatername: request.body.theatername,
+    theaterId: request.body.theaterId,
     ticketcost: request.body.ticketcost,
     actorname: request.body.actorname,
     directorname: request.body.directorname,
@@ -65,8 +104,14 @@ app.post("/addmovie", (request, response) => {
     type: "movies",
   };
 
-  dbconnection.insert(object);
-  console.log("Data added");
+  dbconnection
+    .insert(object)
+    .then((data) => {
+      response.send(data);
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/checkuser/:id", (req, res) => {
@@ -84,6 +129,7 @@ app.get("/checkuser/:id", (req, res) => {
       return res.json(data);
     } else {
       console.log("EmailId doesn't exist");
+      res.send("null");
     }
   });
 });
@@ -92,7 +138,7 @@ app.get("/chooselocation/:id", (req, res) => {
   console.log("retreived......", req.params.id);
   var object = {
     selector: {
-      theaterlocation: req.params.id,
+      theaterlocationId: req.params.id,
       type: "theaters",
     },
   };
@@ -111,7 +157,7 @@ app.get("/choosemovie/:id", (req, res) => {
   console.log("retreived......", req.params.id);
   var object = {
     selector: {
-      theatername: req.params.id,
+      theaterId: req.params.id,
       type: "movies",
     },
   };
@@ -174,6 +220,38 @@ app.get("/getallmovie", (req, res) => {
       return res.json(data);
     } else {
       console.log("Feedbacks doesn't exist");
+    }
+  });
+});
+
+app.get("/getalllocation", (req, res) => {
+  var object = {
+    selector: {
+      type: "locations",
+    },
+  };
+
+  storedb.moviedb.find(object).then((data) => {
+    if (data) {
+      return res.json(data);
+    } else {
+      console.log("Locations doesn't exist");
+    }
+  });
+});
+
+app.get("/getalltheater", (req, res) => {
+  var object = {
+    selector: {
+      type: "theaters",
+    },
+  };
+
+  storedb.moviedb.find(object).then((data) => {
+    if (data) {
+      return res.json(data);
+    } else {
+      console.log("Theaters doesn't exist");
     }
   });
 });
@@ -257,14 +335,19 @@ app.post("/addtheater", (request, response) => {
   console.log(request);
   var object = {
     theatername: request.body.theatername,
-    theaterid: request.body.theaterid,
     totalseats: request.body.totalseats,
-    theaterlocation: request.body.theaterlocation,
+    theaterlocationId: request.body.theaterlocationId,
     type: "theaters",
   };
 
-  dbconnection.insert(object);
-  console.log("Data added");
+  dbconnection
+    .insert(object)
+    .then((data) => {
+      response.send(data);
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.post("/addfeedback", (request, response) => {
@@ -275,9 +358,14 @@ app.post("/addfeedback", (request, response) => {
     message: request.body.message,
     type: "feedbacks",
   };
-
-  dbconnection.insert(object);
-  console.log("Data added");
+  dbconnection
+    .insert(object)
+    .then((data) => {
+      response.send(data);
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.listen(port, (err) => {

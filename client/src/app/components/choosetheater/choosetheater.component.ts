@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { theater } from 'Models/theater';
 import { SharedService } from 'src/app/service/shared.service';
 
 @Component({
@@ -11,12 +12,13 @@ export class ChoosetheaterComponent implements OnInit {
 
   constructor(private sharedservice:SharedService, private route:Router) { }
  choosetheater: any = {
-    location:localStorage.getItem("userlocation")
+    locationId:localStorage.getItem("userlocation")
   }
-  choosetheatername: any = {
-    theatername:'',
+  choosetheaterId: any = {
+    theaterId:'',
   }
    theaterlist:any = []
+
   ngOnInit(): void {
    
     this.sharedservice.chooselocation(this.choosetheater).subscribe((res) =>{
@@ -26,16 +28,16 @@ export class ChoosetheaterComponent implements OnInit {
         this.theaterlist.push(res.docs[i]);
         console.log(this.theaterlist);
       }
-     
-    });   
+    }); 
   }
- 
   onSubmit(){
-    if(this.choosetheatername.theatername === ""){
+    if(this.choosetheaterId.theaterId === ""){
       alert("please select theatername");
     }else{
-    localStorage.setItem("theatername",this.choosetheatername.theatername);
+    localStorage.setItem("theaterId",this.choosetheaterId.theaterId);
     this.route.navigate(['/choosemovie']);
   }}
 
+  
+  public data:theater[]=[];
 }

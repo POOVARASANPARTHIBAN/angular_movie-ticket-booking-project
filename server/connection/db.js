@@ -7,15 +7,6 @@ var cloudant = Cloudant({ url: url, username: username, password: password });
 
 insert = function (paramsvalue) {
   console.log(paramsvalue);
-  cloudant
-    .use("moviebookingapp")
-    .insert(paramsvalue)
-    .then((data) => {
-      console.log("Data Clouddatabase" + data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  return cloudant.use("moviebookingapp").insert(paramsvalue);
 };
-
 module.exports = { insert };

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
+import { ToastrService } from 'ngx-toastr';
+import { theater } from 'Models/theater';
 
 @Component({
   selector: 'app-movieupload',
@@ -8,7 +10,8 @@ import { SharedService } from 'src/app/service/shared.service';
 })
 export class MovieuploadComponent implements OnInit {
 
-  constructor(private sharedservice : SharedService) { }
+
+  constructor(private sharedservice : SharedService,private toastr:ToastrService) { }
 
   movieupload : any = {
     _id : '',
@@ -16,7 +19,7 @@ export class MovieuploadComponent implements OnInit {
     movieimageurl : '',
     movievideourl : '',
     moviedescription : '',
-    theatername: '',
+    theaterId: '',
     ticketcost : 0,
     actorname : '',
     directorname : '',
@@ -25,17 +28,27 @@ export class MovieuploadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.sharedservice.getalltheater().subscribe((data) =>{
+      var length = data.docs.length;
+      console.log(data)
+      for(var i = 0;i<length;i++)
+      {
+        this.data.push(data.docs[i])
+      }
+    })
   }
 
   OnSubmit(){
     console.log(this.movieupload)
-    if(this.movieupload.moviename === "" || this.movieupload.movieimageurl === "" || this.movieupload.movievideourl === "" || this.movieupload.moviedescription === "" || this.movieupload.theatername === "" ||this.movieupload.ticketcost === "" ||this.movieupload.actorname === "" ||this.movieupload.directorname === ""){
-      alert("please fill all fields");
-    }else{
    this.sharedservice.addmovie(this.movieupload).subscribe((data) =>{
      console.log(data);
-     alert("Movie Uploaded Successfully!!");
-   })}
+     if(data.error){
+      this.toastr.error(data.message);
+     }else{
+      this.toastr.success("Data store successful.!!");
+       console.log(data);
+     }
+   }
+   )};
+public data : theater[] = [];
   }
-
-}

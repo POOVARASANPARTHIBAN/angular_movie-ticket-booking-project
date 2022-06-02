@@ -8,7 +8,7 @@ import { SharedService } from 'src/app/service/shared.service';
   styleUrls: ['./selectbookingdate.component.css']
 })
 export class SelectbookingdateComponent implements OnInit {
-
+  mindate:any;
   constructor(private sharedservice: SharedService,private Route: Router) { }
   choosemovie: any = {
     moviename:localStorage.getItem("moviename"),
@@ -21,8 +21,10 @@ export class SelectbookingdateComponent implements OnInit {
     releasedate:Date.now,
     outdate: Date.now
   }
+  month:any;
   movieDetails:any = []
   ngOnInit(): void {
+    this.pastdate();
     this.sharedservice.getmoviedetails(this.choosemovie).subscribe((res) =>{
       console.log(res);
       this.movieDetails = []
@@ -37,6 +39,7 @@ export class SelectbookingdateComponent implements OnInit {
       this.selectdate.releasedate = localStorage.getItem("releasedate");
       this.selectdate.outdate = localStorage.getItem("outdate");
      
+     
     });
     
   }
@@ -47,5 +50,21 @@ export class SelectbookingdateComponent implements OnInit {
     localStorage.setItem("bookingdate",this.choosemovie.bookingdate)
     this.Route.navigate(['/seatselection']);
   }
+  
+}
+pastdate(){
+  var date = new Date();
+  var tdydate:any = date.getDate();
+  var currentmonth:any = date.getMonth() + 1;
+  var currentyear:any = date.getFullYear();
+  if (tdydate < 10){
+    tdydate = "0" + tdydate;
+  }
+  if(currentmonth < 10){
+    currentmonth = "0" + currentmonth;
+  }
+  this.mindate = currentyear + "-" + currentmonth + "-" + tdydate;
+  console.log(this.mindate);
+  
 }
 }

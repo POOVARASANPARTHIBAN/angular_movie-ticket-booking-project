@@ -1,59 +1,16 @@
 <app-adminnavbar></app-adminnavbar>
-<!-- <div *ngFor="let item of data">
-    <br />
-    <h1
-    >
-      New Releases
-    </h1>
-    <br />
-    <br />
-    <div class="row">
-          <div className="column">
-            <div class="card">
-              <img src={{item.movieimageurl}} width="260px" height="350px" />
-              <br />
-              <button
-                className="btn btn-warning">
-                View Details
-              </button>
-              <br />
-              <button
-                class="btn btn-success">
-                Book Now
-              </button>
-            </div>
-          </div>
-    </div>
-  </div> -->
 <div>
   <br />
-  <h1 style="
-        text-align: left;
-        padding-left: 15px;
-        color: white;
-        font-family:cursive;">
+  <h1 class="header">
     Theater Movies
   </h1>
   <br>
-  <!-- <div class="row" *ngFor="let item of data" style="padding:50px">
-          <div class="column">
-            <div class="card" style="textAlign:left">
-              <img src={{item.movieimageurl}} alt={{item.moviedescription}} width="260px" height="350px" />
-              <br />
-              <button class="btn btn-danger text-center"style="width: 114%;" >
-                Delete
-              </button>
-            </div>
-            <br /> <br />
-          </div>
-
-    </div> -->
   <div class="row">
     <div class="column" *ngFor="let item of data">
       <div class="card" style="text-align:left;">
-        <img src={{item.movieimageurl}} alt={{item.moviedescription}} width="260px" height="350px" />
+        <img src={{item.movieimageurl}} alt={{item.moviedescription}} width="260px" height="350px"/>
         <br />
-        <button class="card-footer btn btn-danger text-center" style="width: 78%;"
+        <button class="btn btn-delete" style="width: 78%;"
           (click)="deleteMovie(item._id,item._rev)">
           Delete
         </button>
@@ -61,18 +18,4 @@
       <br>
     </div>
   </div>
-
-  <!-- <div class="row">
-        <div class="col-sm-3" *ngFor="let item of data">
-            <div  class="card card-row" style="width: 20rem;">
-                <img class="card-img-top" src={{item.movieimageurl}} style="width: 18rem;" alt="Card image cap">
-                <div class="card-body">
-                    <button class="btn btn-danger text-center"style="width: 108%;" >
-                        Delete
-                      </button>
-                </div>
-              </div>
-        </div>
-    </div> -->
-
 </div>
