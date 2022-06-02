@@ -7,13 +7,13 @@
 }
 label{
     color: rgb(0, 0, 0);
-    font-family: 'papyrus';
+    font-family: 'papyrus',sans-serif;
 }
 .title{
     padding: 8px;
     color: rgb(0, 0, 0);
     font-size: 20px;
-    font-family: 'papyrus';
+    font-family: 'papyrus',sans-serif;
 }
   .input{
     height: 25px;

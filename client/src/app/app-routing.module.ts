@@ -16,7 +16,6 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SeatselectionComponent } from './components/seatselection/seatselection.component';
 import { SelectbookingdateComponent } from './components/selectbookingdate/selectbookingdate.component';
-import { SelectseatComponent } from './components/selectseat/selectseat.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { MybookingsComponent } from './components/userhomepage/mybookings/mybookings.component';
 import { UserhomepageComponent } from './components/userhomepage/userhomepage.component';
