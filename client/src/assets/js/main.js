@@ -7,7 +7,7 @@
     let check = true;
 
     for (const element of input) {
-      if (validate(element) == false) {
+      if (validate(element)) {
         showValidate(element);
         check = false;
       }
