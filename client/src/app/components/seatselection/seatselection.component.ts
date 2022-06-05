@@ -61,17 +61,12 @@ export class SeatselectionComponent implements OnInit {
        let bookedseats = res.docs[i].seatnames;
         let array = bookedseats.split(",");
         this.datalist.push(res.docs[i].seatnames);
-        for (const element of array) {
-          $("#" + element).attr("disabled", true);
+        for (let i = 0; i < array.length; i++) {
+          $("#" + array[i]).attr("disabled", true);
         }
       }      
-     
     });
     }
-
-   
-
-
   }
 
   confirmSelection(username:string,totalseats:string){
@@ -84,24 +79,16 @@ export class SeatselectionComponent implements OnInit {
       let allNumberVals = [];
       let allSeatsVals = [];
 
+      //Storing in Array
       allNameVals.push(username);
       allNumberVals.push(totalseats);
       
-      let checkedseats = [$("#seatsBlock :checked")];
-     
-    let count=0;
-      for(let element of checkedseats){
-    
-        console.log(element);
-        count=count+1;
-        
-        allSeatsVals.push(element);
-        this.allSeatarray.push(element);
+      for(let i=0;i<$("#seatsBlock :checked").length;i++){
+        allSeatsVals.push($("#seatsBlock :checked")[i].value);
+        this.allSeatarray.push($("#seatsBlock :checked")[i].value);
       }
-    
-      
-      
-     //Displaying
+      console.log(this.allSeatarray);
+      //Displaying
       $("#nameDisplay").val(allNameVals);
       $("#NumberDisplay").val(allNumberVals);
       $("#seatsDisplay").val(allSeatsVals);
@@ -124,8 +111,8 @@ bookingFunction(){
   let totalseats:number = Number( _totalseats);
   let totalamount =  ticketcost*totalseats;
    let options = {
-        key: "rzp_test_PdToHZPZMaZA8y",
-        key_secret:"nKMUmgbnIu8hOT5ZvwIccaO1",
+        key: "rzp_test_ttpGgVOFIDMQbw",
+        key_secret:"0aYr4AMuz4itRkvIFVQQRTLx",
         amount:  totalamount*100,
         currency:"INR",
         name: localStorage.getItem("moviename"),
