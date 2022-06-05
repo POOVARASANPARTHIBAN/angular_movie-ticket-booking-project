@@ -55,11 +55,11 @@ export class SeatselectionComponent implements OnInit {
       $("#con-select").show();
       $(".alert-message").show();
        this.sharedservice.getdata(this.disabledatas).subscribe((res) =>{
-      var length = res.docs.length;
+      let length = res.docs.length;
       this.datalist = []
       for(var i=0;i<length;i++){
-       var bookedseats = res.docs[i].seatnames;
-        var array = bookedseats.split(",");
+       let bookedseats = res.docs[i].seatnames;
+        let array = bookedseats.split(",");
         this.datalist.push(res.docs[i].seatnames);
         for (const element of array) {
           $("#" + element).attr("disabled", true);
@@ -80,17 +80,17 @@ export class SeatselectionComponent implements OnInit {
       $("#pay-btn").prop("disabled", false);
       $("#con-select").hide();
       $("#pay-btn").show();
-      var allNameVals = [];
-      var allNumberVals = [];
-      var allSeatsVals = [];
+      let allNameVals = [];
+      let allNumberVals = [];
+      let allSeatsVals = [];
 
       allNameVals.push(username);
       allNumberVals.push(totalseats);
       
-      var checkedseats = [$("#seatsBlock :checked")];
+      let checkedseats = [$("#seatsBlock :checked")];
      
-    var count=0;
-      for(var element of checkedseats){
+    let count=0;
+      for(let element of checkedseats){
     
         console.log(element);
         count=count+1;
@@ -118,12 +118,12 @@ export class SeatselectionComponent implements OnInit {
 
 bookingFunction(){
   
-  var _ticketcost = localStorage.getItem("ticketcost");
-  var ticketcost:number = Number( _ticketcost);
-  var _totalseats = localStorage.getItem("totalseats");
-  var totalseats:number = Number( _totalseats);
-  var totalamount =  ticketcost*totalseats;
-   var options = {
+  let _ticketcost = localStorage.getItem("ticketcost");
+  let ticketcost:number = Number( _ticketcost);
+  let _totalseats = localStorage.getItem("totalseats");
+  let totalseats:number = Number( _totalseats);
+  let totalamount =  ticketcost*totalseats;
+   let options = {
         key: "rzp_test_PdToHZPZMaZA8y",
         key_secret:"nKMUmgbnIu8hOT5ZvwIccaO1",
         amount:  totalamount*100,

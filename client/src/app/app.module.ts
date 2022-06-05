@@ -72,8 +72,8 @@ import { LocationuploadComponent } from './components/adminhome/adminhome/locati
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
-    // HttpCallInterceptor
+    ToastrModule.forRoot(),
+    HttpCallInterceptor
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

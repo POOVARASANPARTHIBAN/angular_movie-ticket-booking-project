@@ -13,9 +13,9 @@ export class ViewfeedbackComponent implements OnInit {
   
   ngOnInit(): void {
     this.sharedservice.getfeedback().subscribe((res) =>{
-      var length = res.docs.length;
+      let length = res.docs.length;
       console.log(res);
-      for(var i=0;i<length;i++){
+      for(let i=0;i<length;i++){
         this.data.push(res.docs[i]);
         console.log(this.data);
       }     

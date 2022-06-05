@@ -17,7 +17,7 @@ mybooking: any = {
   }
   ngOnInit(): void {
     this.sharedservice.getmyBooking(this.mybooking).subscribe(data=>{
-      var length = data.docs.length;
+      let length = data.docs.length;
       console.log(data)
       for(var i = 0;i<length;i++)
       {

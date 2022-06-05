@@ -53,10 +53,10 @@ export class SelectbookingdateComponent implements OnInit {
   
 }
 pastdate(){
-  var date = new Date();
-  var tdydate:any = date.getDate();
-  var currentmonth:any = date.getMonth() + 1;
-  var currentyear:any = date.getFullYear();
+  let date = new Date();
+  let tdydate:any = date.getDate();
+  let currentmonth:any = date.getMonth() + 1;
+  let currentyear:any = date.getFullYear();
   if (tdydate < 10){
     tdydate = "0" + tdydate;
   }
