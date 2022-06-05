@@ -23,10 +23,10 @@ choosemovie: any = {
   
   ngOnInit(): void {
      this.sharedservice.choosemovie(this.choosemovie).subscribe((res) =>{
-      var length = res.docs.length;
+      const length = res.docs.length;
       console.log(res);
       this.movielist = []
-      for(var i=0;i<length;i++){
+      for(let i=0;i<length;i++){
         this.movielist.push(res.docs[i]);
         console.log(this.movielist);
       }     

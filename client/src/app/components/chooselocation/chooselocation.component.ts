@@ -12,15 +12,15 @@ export class ChooselocationComponent implements OnInit {
 
   constructor(private sharedservice:SharedService, private route:Router) {
 
-   var id =  localStorage.getItem("_id");
+   let id =  localStorage.getItem("_id");
    console.log(id);
    }
 
   ngOnInit(): void {
     this.sharedservice.getalllocation().subscribe((data)=>{
-      var length = data.docs.length;
+      let length = data.docs.length;
       console.log(data)
-      for(var i = 0;i<length;i++)
+      for(let i = 0;i<length;i++)
       {
         this.data.push(data.docs[i])
       }

@@ -22,9 +22,9 @@ export class ChoosetheaterComponent implements OnInit {
   ngOnInit(): void {
    
     this.sharedservice.chooselocation(this.choosetheater).subscribe((res) =>{
-      var length = res.docs.length;
+      let length = res.docs.length;
       this.theaterlist = []
-      for(var i=0;i<length;i++){
+      for(let i=0;i<length;i++){
         this.theaterlist.push(res.docs[i]);
         console.log(this.theaterlist);
       }

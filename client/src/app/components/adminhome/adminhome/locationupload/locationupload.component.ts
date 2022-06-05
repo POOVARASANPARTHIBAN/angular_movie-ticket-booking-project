@@ -15,8 +15,7 @@ export class LocationuploadComponent implements OnInit {
     locationName: ''
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { console.log() }
   onSubmit(){
     if(this.location.locationName == '')
       alert("Please fill the fields.")

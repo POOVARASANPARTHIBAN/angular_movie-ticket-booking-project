@@ -29,9 +29,9 @@ export class MovieuploadComponent implements OnInit {
 
   ngOnInit(): void {
     this.sharedservice.getalltheater().subscribe((data) =>{
-      var length = data.docs.length;
+      let length = data.docs.length;
       console.log(data)
-      for(var i = 0;i<length;i++)
+      for(let i = 0;i<length;i++)
       {
         this.data.push(data.docs[i])
       }
