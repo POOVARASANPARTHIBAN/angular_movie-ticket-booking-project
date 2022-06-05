@@ -7,13 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsernavbarComponent implements OnInit {
 
-  constructor() { /* TODO document why this constructor is empty */  }
-
-  ngOnInit(): void {
-    // TODO document why this method 'ngOnInit' is empty
-  
-  }
-logoutFunction(){
+  ngOnInit(): void { console.log() }
+ 
+  logoutFunction(){
   localStorage.clear();
   window.location.href="/home";
 }

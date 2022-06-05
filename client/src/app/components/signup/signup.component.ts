@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
     mobile : '',
   }
 
-  ngOnInit(): void { /* TODO document why this method 'ngOnInit' is empty */   }
+  ngOnInit(): void { console.log() }
 
   OnSubmit(){
     console.log(this.signup)

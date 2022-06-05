@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminhomeComponent implements OnInit {
 
-  constructor() { }
-
   details : any = {
     _id : '',
     _rev : '',
@@ -19,7 +17,6 @@ export class AdminhomeComponent implements OnInit {
     mobile : '',
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { console.log(this.details) }
 
 }

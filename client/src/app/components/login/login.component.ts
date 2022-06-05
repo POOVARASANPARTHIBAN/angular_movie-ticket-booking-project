@@ -17,9 +17,8 @@ export class LoginComponent implements OnInit {
     password:''
   }
 temp : any = {};
-  ngOnInit(): void {
-    // TODO document why this method 'ngOnInit' is empty
-   }
+  ngOnInit(): void { console.log() }
+  
   onSubmit(){
     if(this.login.email === "admin@gmail.com" && this.login.password === "admin"){
       localStorage.setItem("adminusername","Admin");

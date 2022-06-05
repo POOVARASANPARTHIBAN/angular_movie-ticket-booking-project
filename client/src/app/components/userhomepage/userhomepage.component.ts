@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class UserhomepageComponent implements OnInit {
 
 
-  ngOnInit(): void { /* TODO document why this method 'ngOnInit' is empty */  
-  }
+  ngOnInit(): void { console.log() }
   
 }

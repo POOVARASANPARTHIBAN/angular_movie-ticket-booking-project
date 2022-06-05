@@ -84,7 +84,6 @@ export class SeatselectionComponent implements OnInit {
       var allNumberVals = [];
       var allSeatsVals = [];
 
-      //Storing in Array
       allNameVals.push(username);
       allNumberVals.push(totalseats);
       

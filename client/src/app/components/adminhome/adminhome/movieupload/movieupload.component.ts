@@ -49,6 +49,6 @@ export class MovieuploadComponent implements OnInit {
        console.log(data);
      }
    }
-   )};
+   )}
 public data : Theater[] = [];
   }

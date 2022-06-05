@@ -17,9 +17,7 @@ export class FeedbackComponent implements OnInit {
     
   }
 
-  ngOnInit(): void {
-    // TODO document why this method 'ngOnInit' is empty
-   }
+  ngOnInit(): void { console.log(this.feedback) }
  
   onSubmit(){
     console.log(this.feedback);
