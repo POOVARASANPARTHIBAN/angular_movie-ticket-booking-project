@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
 import { ActivatedRoute } from '@angular/router';
-import { location } from 'Models/location';
+import { Location } from 'Models/location';
 @Component({
   selector: 'app-theaterupload',
   templateUrl: './theaterupload.component.html',
@@ -36,5 +36,5 @@ export class TheateruploadComponent implements OnInit {
    })}
   
 
-  public data:location[] = [];
+  public data: Location[] = [];
   }

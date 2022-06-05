@@ -1,4 +1,4 @@
-export class retrievebooking{
+export class Retrievebooking{
     currentdate = Date.now;
     username = '';
     email = '';

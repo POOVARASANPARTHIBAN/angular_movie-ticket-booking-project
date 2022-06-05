@@ -1,4 +1,4 @@
-export class theater{
+export class Theater{
     _id = '';
     theatername = '';
     totalseats = '';

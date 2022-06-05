@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/service/shared.service';
-import { movie } from 'Models/movie';
+import { Movie } from 'Models/movie';
 
 @Component({
   selector: 'app-viewmovie',
@@ -32,6 +32,6 @@ export class ViewmovieComponent implements OnInit {
      window.location.reload();
    })
   }
-public data: movie[] = [];
+public data: Movie[] = [];
 
 }

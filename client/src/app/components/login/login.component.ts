@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
 import { Router } from '@angular/router';
-import { signup } from 'Models/signup';
+import { Signup } from 'Models/signup';
 
 @Component({
   selector: 'app-login',
@@ -48,6 +48,6 @@ temp : any = {};
    })
     }  
   } 
-public data : signup[]=[];
+public data : Signup[]=[];
 
 }

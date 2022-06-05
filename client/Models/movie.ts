@@ -1,4 +1,4 @@
-export class movie{
+export class Movie{
     _id = '';
     _rev = '';
     movieimageurl = '';

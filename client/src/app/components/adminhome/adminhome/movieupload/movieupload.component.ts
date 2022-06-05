@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
 import { ToastrService } from 'ngx-toastr';
-import { theater } from 'Models/theater';
+import { Theater } from 'Models/theater';
 
 @Component({
   selector: 'app-movieupload',
@@ -50,5 +50,5 @@ export class MovieuploadComponent implements OnInit {
      }
    }
    )};
-public data : theater[] = [];
+public data : Theater[] = [];
   }

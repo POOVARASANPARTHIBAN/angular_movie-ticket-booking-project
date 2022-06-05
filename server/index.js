@@ -191,7 +191,7 @@ app.get("/getmoviedetails/:id", (req, res) => {
   });
 });
 
-app.get("/getfeedback", (req, res) => {
+app.get("/getfeedback", (_request, res) => {
   var object = {
     selector: {
       type: "feedbacks",
@@ -208,7 +208,7 @@ app.get("/getfeedback", (req, res) => {
   });
 });
 
-app.get("/getallmovie", (req, res) => {
+app.get("/getallmovie", (_req, res) => {
   var object = {
     selector: {
       type: "movies",
@@ -224,7 +224,7 @@ app.get("/getallmovie", (req, res) => {
   });
 });
 
-app.get("/getalllocation", (req, res) => {
+app.get("/getalllocation", (_req, res) => {
   var object = {
     selector: {
       type: "locations",
@@ -240,7 +240,7 @@ app.get("/getalllocation", (req, res) => {
   });
 });
 
-app.get("/getalltheater", (req, res) => {
+app.get("/getalltheater", (_req, res) => {
   var object = {
     selector: {
       type: "theaters",
@@ -256,7 +256,7 @@ app.get("/getalltheater", (req, res) => {
   });
 });
 
-app.get("/getallbooking", (req, res) => {
+app.get("/getallbooking", (_req, res) => {
   var object = {
     selector: {
       type: "bookings",

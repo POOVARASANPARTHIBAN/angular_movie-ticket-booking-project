@@ -1,4 +1,4 @@
-export class feedback
+export class Feedback
 {
     username = '';
     email = '';

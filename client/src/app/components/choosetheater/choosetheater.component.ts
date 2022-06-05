@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { theater } from 'Models/theater';
+import { Theater } from 'Models/theater';
 import { SharedService } from 'src/app/service/shared.service';
 
 @Component({
@@ -39,5 +39,5 @@ export class ChoosetheaterComponent implements OnInit {
   }}
 
   
-  public data:theater[]=[];
+  public data: Theater[]=[];
 }

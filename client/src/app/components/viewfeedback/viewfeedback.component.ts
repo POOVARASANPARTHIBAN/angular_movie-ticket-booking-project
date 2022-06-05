@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { feedback } from 'Models/feedback';
+import { Feedback } from 'Models/feedback';
 import { SharedService } from 'src/app/service/shared.service';
 
 @Component({
@@ -21,6 +21,6 @@ export class ViewfeedbackComponent implements OnInit {
       }     
     });
   }
-  public data : feedback[] = [];
+  public data :Feedback[] = [];
 
 }

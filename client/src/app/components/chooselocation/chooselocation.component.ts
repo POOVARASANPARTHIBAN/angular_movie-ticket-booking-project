@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { location } from 'Models/location';
+import { Location } from 'Models/location';
 import { SharedService } from 'src/app/service/shared.service';
 
 @Component({
@@ -37,5 +37,5 @@ export class ChooselocationComponent implements OnInit {
     localStorage.setItem("userlocation",this.chooselocation.locationId);
      this.route.navigate(['/choosetheater']);
   }}
-  public data : location[] = [];
+  public data : Location[] = [];
 }

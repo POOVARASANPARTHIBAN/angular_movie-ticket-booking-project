@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { retrievebooking } from 'Models/retrivebooking';
+import { Retrievebooking } from 'Models/retrivebooking';
 import { SharedService } from 'src/app/service/shared.service';
 
 @Component({
@@ -27,6 +27,6 @@ mybooking: any = {
     })
   }
 
-  public data: retrievebooking[] = [];
+  public data: Retrievebooking[] = [];
 
 }

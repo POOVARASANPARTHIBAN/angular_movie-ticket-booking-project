@@ -1,6 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { SharedService } from 'src/app/service/shared.service';
 import { WindowRefService } from 'src/app/window-ref.service';
 
@@ -13,6 +11,8 @@ declare var $: any;
 })
 export class SeatselectionComponent implements OnInit {
   
+ 
+
   constructor(private sharedservice:SharedService,private winRef: WindowRefService,) { }
   value = false;
  allSeatarray:any = [];
@@ -43,7 +43,7 @@ export class SeatselectionComponent implements OnInit {
     
   }
 
-  selectSeat(username:String,totalseats:String){
+  selectSeat(username:string,totalseats:string){
      if (username === "" || totalseats === "") {
       alert("please enter name and ceats");
     } else {
@@ -61,9 +61,8 @@ export class SeatselectionComponent implements OnInit {
        var bookedseats = res.docs[i].seatnames;
         var array = bookedseats.split(",");
         this.datalist.push(res.docs[i].seatnames);
-        for (var i = 0; i < array.length; i++) {
-
-          $("#" + array[i]).attr("disabled", true);
+        for (const element of array) {
+          $("#" + element).attr("disabled", true);
         }
       }      
      
@@ -89,17 +88,27 @@ export class SeatselectionComponent implements OnInit {
       allNameVals.push(username);
       allNumberVals.push(totalseats);
       
-      for(var  i=0;i<$("#seatsBlock :checked").length;i++){
-        allSeatsVals.push($("#seatsBlock :checked")[i].value);
-        this.allSeatarray.push($("#seatsBlock :checked")[i].value);
+      var checkedseats = [$("#seatsBlock :checked")];
+     
+    var count=0;
+      for(var element of checkedseats){
+    
+        console.log(element);
+        count=count+1;
+        
+        allSeatsVals.push(element);
+        this.allSeatarray.push(element);
       }
-      console.log(this.allSeatarray);
+    
+      
+      
+     //Displaying
       $("#nameDisplay").val(allNameVals);
       $("#NumberDisplay").val(allNumberVals);
       $("#seatsDisplay").val(allSeatsVals);
       localStorage.setItem("moviewatchers",username);
       localStorage.setItem("totalseats",totalseats);
-      localStorage.setItem("seatnames",this.allSeatarray.toString());;
+      localStorage.setItem("seatnames",this.allSeatarray.toString());
     } else {
       alert("Please select " + totalseats + " seats");
     }
@@ -116,8 +125,8 @@ bookingFunction(){
   var totalseats:number = Number( _totalseats);
   var totalamount =  ticketcost*totalseats;
    var options = {
-        key: "rzp_test_DwNI99Q3vO7acV",
-        key_secret:"mJ3EQaRyeFzAeZMwMnIWE61F",
+        key: "rzp_test_PdToHZPZMaZA8y",
+        key_secret:"nKMUmgbnIu8hOT5ZvwIccaO1",
         amount:  totalamount*100,
         currency:"INR",
         name: localStorage.getItem("moviename"),
@@ -141,4 +150,3 @@ bookingFunction(){
       pay.open();
     }
 }
-

@@ -1,4 +1,4 @@
-export class location{
+export class Location{
     _id = '';
     locationName = '';
 }
