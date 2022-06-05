@@ -19,7 +19,7 @@ mybooking: any = {
     this.sharedservice.getmyBooking(this.mybooking).subscribe(data=>{
       let length = data.docs.length;
       console.log(data)
-      for(var i = 0;i<length;i++)
+      for(let i = 0;i<length;i++)
       {
         this.data.push(data.docs[i])
       }

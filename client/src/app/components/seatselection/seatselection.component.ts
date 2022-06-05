@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
 import { WindowRefService } from 'src/app/window-ref.service';
 
-declare var $: any;
+declare let $: any;
 
 @Component({
   selector: 'app-seatselection',
@@ -57,7 +57,7 @@ export class SeatselectionComponent implements OnInit {
        this.sharedservice.getdata(this.disabledatas).subscribe((res) =>{
       let length = res.docs.length;
       this.datalist = []
-      for(var i=0;i<length;i++){
+      for(let i=0;i<length;i++){
        let bookedseats = res.docs[i].seatnames;
         let array = bookedseats.split(",");
         this.datalist.push(res.docs[i].seatnames);
@@ -145,7 +145,7 @@ bookingFunction(){
           color:"#3399cc"
         }
       };
-      var pay =  new this.winRef.nativeWindow.Razorpay(options);
+      let pay =  new this.winRef.nativeWindow.Razorpay(options);
       pay.open();
     }
 }

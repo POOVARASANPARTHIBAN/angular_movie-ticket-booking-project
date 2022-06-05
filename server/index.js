@@ -16,7 +16,7 @@ app.use(
 
 app.post("/postuser", (request, response) => {
   console.log(request);
-  var object = {
+  let object = {
     username: request.body.username,
     password: request.body.password,
     email: request.body.email,
@@ -38,7 +38,7 @@ app.post("/postuser", (request, response) => {
 app.post("/addlocation", (request, response) => {
   try {
     console.log(request);
-    var object = {
+    let object = {
       locationName: request.body.locationName,
       type: "locations",
     };
@@ -62,7 +62,7 @@ app.post("/addlocation", (request, response) => {
 
 app.post("/addbooking/", (request, response) => {
   console.log(request);
-  var object = {
+  let object = {
     username: request.body.username,
     email: request.body.email,
     mobile: request.body.mobile,
@@ -90,7 +90,7 @@ app.post("/addbooking/", (request, response) => {
 
 app.post("/addmovie", (request, response) => {
   console.log(request);
-  var object = {
+  let object = {
     moviename: request.body.moviename,
     movieimageurl: request.body.movieimageurl,
     movievideourl: request.body.movievideourl,
@@ -116,7 +116,7 @@ app.post("/addmovie", (request, response) => {
 
 app.get("/checkuser/:id", (req, res) => {
   console.log("retreived......", req.params.id);
-  var object = {
+  let object = {
     selector: {
       email: req.params.id,
       type: "users",
@@ -136,7 +136,7 @@ app.get("/checkuser/:id", (req, res) => {
 
 app.get("/chooselocation/:id", (req, res) => {
   console.log("retreived......", req.params.id);
-  var object = {
+  let object = {
     selector: {
       theaterlocationId: req.params.id,
       type: "theaters",
@@ -155,7 +155,7 @@ app.get("/chooselocation/:id", (req, res) => {
 
 app.get("/choosemovie/:id", (req, res) => {
   console.log("retreived......", req.params.id);
-  var object = {
+  let object = {
     selector: {
       theaterId: req.params.id,
       type: "movies",
@@ -174,7 +174,7 @@ app.get("/choosemovie/:id", (req, res) => {
 
 app.get("/getmoviedetails/:id", (req, res) => {
   console.log("retreived......", req.params.id);
-  var object = {
+  let object = {
     selector: {
       moviename: req.params.id,
       type: "movies",
@@ -192,7 +192,7 @@ app.get("/getmoviedetails/:id", (req, res) => {
 });
 
 app.get("/getfeedback", (_request, res) => {
-  var object = {
+  let object = {
     selector: {
       type: "feedbacks",
     },
@@ -209,7 +209,7 @@ app.get("/getfeedback", (_request, res) => {
 });
 
 app.get("/getallmovie", (_req, res) => {
-  var object = {
+  let object = {
     selector: {
       type: "movies",
     },
@@ -225,7 +225,7 @@ app.get("/getallmovie", (_req, res) => {
 });
 
 app.get("/getalllocation", (_req, res) => {
-  var object = {
+  let object = {
     selector: {
       type: "locations",
     },
@@ -241,7 +241,7 @@ app.get("/getalllocation", (_req, res) => {
 });
 
 app.get("/getalltheater", (_req, res) => {
-  var object = {
+  let object = {
     selector: {
       type: "theaters",
     },
@@ -257,7 +257,7 @@ app.get("/getalltheater", (_req, res) => {
 });
 
 app.get("/getallbooking", (_req, res) => {
-  var object = {
+  let object = {
     selector: {
       type: "bookings",
     },
@@ -275,7 +275,7 @@ app.get("/getallbooking", (_req, res) => {
 
 app.get("/getmybooking/:id", (req, res) => {
   console.log("retreived......", req.params.id);
-  var object = {
+  let object = {
     selector: {
       email: req.params.id,
       type: "bookings",
@@ -296,7 +296,7 @@ app.get("/getdata/:theatername/:moviename/:bookingdate", (req, res) => {
   console.log("retreived......", req.params.theatername);
   console.log(req.params.moviename);
   console.log(req.params.bookingdate);
-  var object = {
+  let object = {
     selector: {
       theatername: req.params.theatername,
       moviename: req.params.moviename,
@@ -318,8 +318,8 @@ app.get("/getdata/:theatername/:moviename/:bookingdate", (req, res) => {
 app.delete("/deletemovie/:id/:_rev", (req, res) => {
   console.log(req.params.id);
   console.log(req.params._rev);
-  var id = req.params.id;
-  var rev = req.params._rev;
+  let id = req.params.id;
+  let rev = req.params._rev;
 
   storedb.moviedb.destroy(id, rev, "movies").then((data) => {
     if (data) {
@@ -333,7 +333,7 @@ app.delete("/deletemovie/:id/:_rev", (req, res) => {
 
 app.post("/addtheater", (request, response) => {
   console.log(request);
-  var object = {
+  let object = {
     theatername: request.body.theatername,
     totalseats: request.body.totalseats,
     theaterlocationId: request.body.theaterlocationId,
@@ -352,7 +352,7 @@ app.post("/addtheater", (request, response) => {
 
 app.post("/addfeedback", (request, response) => {
   console.log(request);
-  var object = {
+  let object = {
     username: request.body.username,
     email: request.body.email,
     message: request.body.message,

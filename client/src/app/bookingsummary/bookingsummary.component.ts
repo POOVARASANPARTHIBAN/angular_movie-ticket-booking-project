@@ -24,7 +24,7 @@ bookingdata:any = {
     totalcost: Number(localStorage.getItem("ticketcost")) * Number(localStorage.getItem("totalseats")),
     users : localStorage.getItem("_id")
   }
-  ngOnInit(): void { /* TODO document why this method 'ngOnInit' is empty */  }
+  ngOnInit(): void { console.log() }
   insertbooking(){
       console.log(this.bookingdata)
    this.sharedservice.addbooking(this.bookingdata).subscribe((data) =>{

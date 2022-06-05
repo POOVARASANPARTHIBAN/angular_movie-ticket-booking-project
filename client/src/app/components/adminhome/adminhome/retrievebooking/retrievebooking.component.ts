@@ -15,7 +15,6 @@ export class RetrievebookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.sharedservice.getallBooking().subscribe(data=>{
-      let length = data.docs.length;
       console.log(data)
       this.data = lodash.sortBy(data.docs,'lastmodifieddate')
             console.log(this.data);
