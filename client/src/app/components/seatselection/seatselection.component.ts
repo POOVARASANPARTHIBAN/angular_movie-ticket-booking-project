@@ -84,7 +84,6 @@ export class SeatselectionComponent implements OnInit {
       let allNumberVals = [];
       let allSeatsVals = [];
 
-      //Storing in Array
       allNameVals.push(username);
       allNumberVals.push(totalseats);
       
@@ -93,7 +92,6 @@ export class SeatselectionComponent implements OnInit {
         this.allSeatarray.push($("#seatsBlock :checked")[i].value);
       }
       console.log(this.allSeatarray);
-      //Displaying
       $("#nameDisplay").val(allNameVals);
       $("#NumberDisplay").val(allNumberVals);
       $("#seatsDisplay").val(allSeatsVals);

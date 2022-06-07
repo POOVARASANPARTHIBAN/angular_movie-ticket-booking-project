@@ -5,7 +5,6 @@ const port = 8000;
 const cors = require("cors");
 const dbconnection = require("../server/connection/db");
 const storedb = require("./connection/nanodb");
-const { response } = require("express");
 app.use(connection.static("public"));
 app.use(bodyparser.json());
 app.use(
