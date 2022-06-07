@@ -125,7 +125,7 @@ app.get("/checkuser/:id", (req, res) => {
   storedb.moviedb.find(object).then((data) => {
     if (data) {
       console.log(data);
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("EmailId doesn't exist");
       res.send("null");
@@ -145,7 +145,7 @@ app.get("/chooselocation/:id", (req, res) => {
   storedb.moviedb.find(object).then((data) => {
     if (data) {
       console.log(data);
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("Theater doesn't exist");
     }
@@ -164,7 +164,7 @@ app.get("/choosemovie/:id", (req, res) => {
   storedb.moviedb.find(object).then((data) => {
     if (data) {
       console.log(data);
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("Theater doesn't exist");
     }
@@ -183,7 +183,7 @@ app.get("/getmoviedetails/:id", (req, res) => {
   storedb.moviedb.find(object).then((data) => {
     if (data) {
       console.log(data);
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("Movie doesn't exist");
     }
@@ -200,7 +200,7 @@ app.get("/getfeedback", (_request, res) => {
   storedb.moviedb.find(object).then((data) => {
     if (data) {
       console.log(data);
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("Feedbacks doesn't exist");
     }
@@ -216,7 +216,7 @@ app.get("/getallmovie", (_req, res) => {
 
   storedb.moviedb.find(object).then((data) => {
     if (data) {
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("Feedbacks doesn't exist");
     }
@@ -232,7 +232,7 @@ app.get("/getalllocation", (_req, res) => {
 
   storedb.moviedb.find(object).then((data) => {
     if (data) {
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("Locations doesn't exist");
     }
@@ -248,7 +248,7 @@ app.get("/getalltheater", (_req, res) => {
 
   storedb.moviedb.find(object).then((data) => {
     if (data) {
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("Theaters doesn't exist");
     }
@@ -265,7 +265,7 @@ app.get("/getallbooking", (_req, res) => {
   storedb.moviedb.find(object).then((data) => {
     if (data) {
       console.log(data);
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("Feedbacks doesn't exist");
     }
@@ -284,7 +284,7 @@ app.get("/getmybooking/:id", (req, res) => {
   storedb.moviedb.find(object).then((data) => {
     if (data) {
       console.log(data);
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("Feedbacks doesn't exist");
     }
@@ -307,7 +307,7 @@ app.get("/getdata/:theatername/:moviename/:bookingdate", (req, res) => {
   storedb.moviedb.find(object).then((data) => {
     if (data) {
       console.log(data);
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("data doesn't exist");
     }
@@ -323,7 +323,7 @@ app.delete("/deletemovie/:id/:_rev", (req, res) => {
   storedb.moviedb.destroy(id, rev, "movies").then((data) => {
     if (data) {
       console.log(data);
-      return res.json(data);
+      res.json(data);
     } else {
       console.log("movie doesn't exist");
     }

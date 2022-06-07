@@ -11,7 +11,7 @@
                     <label>Movie Name :</label>
                     <input class="input" type="text" #moviename="ngModel" name="moviename" required
                         [(ngModel)]="movieupload.moviename" id="moviename"/>
-                        <div *ngIf="moviename.invalid && (moviename.dirty || moviename.touched)" class="alert">
+                        <div *ngIf="moviename.invalid && (moviename.dirty || moviename.touched)">
                             <div *ngIf="moviename.errors?.required" style="color: red">*TITLE is required.</div>
                         </div>
                 </div>
@@ -20,7 +20,7 @@
                     <label>Movie Imageurl :</label>
                     <input class="input" type="text" #movieimageurl="ngModel" name="movieimageurl" required
                         [(ngModel)]="movieupload.movieimageurl" id="movieimageurl"/>
-                        <div *ngIf="movieimageurl.invalid && (movieimageurl.dirty || movieimageurl.touched)" class="alert">
+                        <div *ngIf="movieimageurl.invalid && (movieimageurl.dirty || movieimageurl.touched)">
                             <div *ngIf="movieimageurl.errors?.required" style="color: red">*IMAGE is required.</div>
                         </div>
                 </div>
@@ -28,7 +28,7 @@
                     <label>Movie Videourl :</label>
                     <input class="input" type="text" #movievideourl="ngModel" name="movievideourl" required
                         [(ngModel)]="movieupload.movievideourl" id="movievideourl"/>
-                        <div *ngIf="movievideourl.invalid && (movievideourl.dirty || movievideourl.touched)" class="alert">
+                        <div *ngIf="movievideourl.invalid && (movievideourl.dirty || movievideourl.touched)">
                             <div *ngIf="movievideourl.errors?.required" style="color: red">*VIDEO is required.</div>
                         </div>
                 </div>
@@ -36,7 +36,7 @@
                     <label>Movie description :</label>
                     <input class="input" type="text" #moviedescription="ngModel" name="moviedescription" required
                         [(ngModel)]="movieupload.moviedescription" id="moviedescription" />
-                        <div *ngIf="moviedescription.invalid && (moviedescription.dirty || moviedescription.touched)" class="alert">
+                        <div *ngIf="moviedescription.invalid && (moviedescription.dirty || moviedescription.touched)">
                             <div *ngIf="moviedescription.errors?.required" style="color: red">*DESCRIPTION is required.</div>
                         </div>
                 </div>
@@ -52,7 +52,7 @@
                     <label>Ticket Cost :</label>
                     <input class="input" type="ticketcost" #ticketcost="ngModel" name="ticketcost" required
                         [(ngModel)]="movieupload.ticketcost" id="ticketcost"/>
-                        <div *ngIf="ticketcost.invalid && (ticketcost.dirty || ticketcost.touched)" class="alert">
+                        <div *ngIf="ticketcost.invalid && (ticketcost.dirty || ticketcost.touched)">
                             <div *ngIf="ticketcost.errors?.required" style="color: red">*TICKETCOST is required.</div>
                         </div>
                         
@@ -61,7 +61,7 @@
                     <label>Actor Name :</label>
                     <input class="input" type="text" #actorname="ngModel" name="actorname" required
                         [(ngModel)]="movieupload.actorname" id="actorname"/>
-                        <div *ngIf="actorname.invalid && (actorname.dirty || actorname.touched)" class="alert">
+                        <div *ngIf="actorname.invalid && (actorname.dirty || actorname.touched)">
                             <div *ngIf="actorname.errors?.required" style="color: red">*ACTOR NAME is required.</div>
                         </div>
                 </div>
@@ -69,7 +69,7 @@
                     <label>Director Name :</label>
                     <input class="input" type="text" #directorname="ngModel" name="directorname" required
                         [(ngModel)]="movieupload.directorname" id="directorname" />
-                        <div *ngIf="directorname.invalid && (directorname.dirty || directorname.touched)" class="alert">
+                        <div *ngIf="directorname.invalid && (directorname.dirty || directorname.touched)">
                             <div *ngIf="directorname.errors?.required" style="color: red">*DIRECTOR NAME is required.</div>
                         </div>
                 </div>

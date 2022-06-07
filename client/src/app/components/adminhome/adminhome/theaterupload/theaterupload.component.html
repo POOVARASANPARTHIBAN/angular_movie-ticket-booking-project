@@ -11,7 +11,7 @@
                     <label>Theater Name :</label>
                     <input class="input" type="text"  name="theatername" #theatername="ngModel" required
                         [(ngModel)]="theaterupload.theatername" id="theatername"/>
-                        <div *ngIf="theatername.invalid && (theatername.dirty || theatername.touched)" class="alert">
+                        <div *ngIf="theatername.invalid && (theatername.dirty || theatername.touched)">
                             <div *ngIf="theatername.errors?.required" style="color: red">*THEATER Name is required.</div>
                         </div>
                 </div>
@@ -19,7 +19,7 @@
                     <label>Theater id :</label>
                     <input class="input " type="text" #theaterId="ngModel" name="theaterid" required
                         [(ngModel)]="theaterupload.theaterid" id="theaterid"/>
-                        <div *ngIf="theaterId.invalid && (theaterId.dirty || theaterId.touched)" class="alert">
+                        <div *ngIf="theaterId.invalid && (theaterId.dirty || theaterId.touched)">
                             <div *ngIf="theaterId.errors?.required" style="color: red">*Name is required.</div>
                         </div>
 
@@ -28,7 +28,7 @@
                     <label>Total Seats :</label>
                     <input class="input " type="number" #totalseats="ngModel" name="totalseats" required
                         [(ngModel)]="theaterupload.totalseats" id="totalseats"/>
-                        <div *ngIf="totalseats.invalid && (totalseats.dirty || totalseats.touched)" class="alert">
+                        <div *ngIf="totalseats.invalid && (totalseats.dirty || totalseats.touched)">
                             <div *ngIf="totalseats.errors?.required" style="color: red">*Name is required.</div>
                         </div>
                 </div>

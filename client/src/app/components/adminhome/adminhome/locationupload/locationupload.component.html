@@ -12,7 +12,7 @@
                     <label>Location :</label>
                     <input class="input" type="text" #locationname="ngModel" name="locationname" required
                         [(ngModel)]="location.locationName" id="locationname" placeholder="Location name"/>
-                        <div *ngIf="locationname.invalid && (locationname.dirty || locationname.touched)" class="alert">
+                        <div *ngIf="locationname.invalid && (locationname.dirty || locationname.touched)">
                             <div *ngIf="locationname.errors?.required" style="color: red">*LOCATION is required.</div>
                         </div>
                 </div>

@@ -61,17 +61,13 @@ export class SeatselectionComponent implements OnInit {
        let bookedseats = res.docs[i].seatnames;
         let array = bookedseats.split(",");
         this.datalist.push(res.docs[i].seatnames);
-        for (let i = 0; i < array.length; i++) {
-          $("#" + array[i]).attr("disabled", true);
+        for (let j = 0; j < array.length; j++) {
+          $("#" + array[j]).attr("disabled", true);
         }
       }      
      
     });
     }
-
-   
-
-
   }
 
   confirmSelection(username:string,totalseats:string){
@@ -87,10 +83,13 @@ export class SeatselectionComponent implements OnInit {
       allNameVals.push(username);
       allNumberVals.push(totalseats);
       
-      for(let i=0;i<$("#seatsBlock :checked").length;i++){
-        allSeatsVals.push($("#seatsBlock :checked")[i].value);
-        this.allSeatarray.push($("#seatsBlock :checked")[i].value);
+      
+
+      for(const element of $('allSeatsVals')){
+        allSeatsVals.push(element);
+        this.allSeatarray.push(element);
       }
+
       console.log(this.allSeatarray);
       $("#nameDisplay").val(allNameVals);
       $("#NumberDisplay").val(allNumberVals);
