@@ -85,9 +85,9 @@ export class SeatselectionComponent implements OnInit {
       
       
 
-      for(const element of $('allSeatsVals')){
-        allSeatsVals.push(element);
-        this.allSeatarray.push(element);
+      for(const element of $("#seatsBlock :checked")){
+        allSeatsVals.push(element.value);
+        this.allSeatarray.push(element.value);
       }
 
       console.log(this.allSeatarray);

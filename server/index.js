@@ -161,12 +161,12 @@ app.get("/choosemovie/:id", (req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      console.log(data);
-      res.json(data);
+  storedb.moviedb.find(object).then((data1) => {
+    if (data1) {
+      console.log(data1);
+      res.json(data1);
     } else {
-      console.log("Theater doesn't exist");
+      console.log("movie doesn't exist");
     }
   });
 });
