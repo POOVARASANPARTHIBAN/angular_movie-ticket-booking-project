@@ -65,8 +65,13 @@ export class SeatselectionComponent implements OnInit {
           $("#" + array[i]).attr("disabled", true);
         }
       }      
+     
     });
     }
+
+   
+
+
   }
 
   confirmSelection(username:string,totalseats:string){

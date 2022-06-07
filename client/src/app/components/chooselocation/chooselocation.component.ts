@@ -10,11 +10,7 @@ import { SharedService } from 'src/app/service/shared.service';
 })
 export class ChooselocationComponent implements OnInit {
 
-  constructor(private sharedservice:SharedService, private route:Router) {
-
-   let id =  localStorage.getItem("_id");
-   console.log(id);
-   }
+  constructor(private sharedservice:SharedService, private route:Router) { }
 
   ngOnInit(): void {
     this.sharedservice.getalllocation().subscribe((data)=>{
@@ -31,11 +27,12 @@ export class ChooselocationComponent implements OnInit {
     locationId:''
   }
   onSubmit(){
-    if(this.chooselocation.location === ""){
+    if(this.chooselocation.locationId === ""){
       alert("please choose location")
     }else{
     localStorage.setItem("userlocation",this.chooselocation.locationId);
      this.route.navigate(['/choosetheater']);
   }}
+
   public data : Location[] = [];
 }
