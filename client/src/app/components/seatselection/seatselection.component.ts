@@ -60,10 +60,10 @@ export class SeatselectionComponent implements OnInit {
       for(let i=0;i<length;i++){
        let bookedseats = res.docs[i].seatnames;
         let array = bookedseats.split(",");
-        this.datalist.push(res.docs[i].seatnames);
-        for (let j = 0; j < array.length; j++) {
-          $("#" + array[j]).attr("disabled", true);
-        }
+        this.datalist.push(res.docs[i].seatnames);   
+      for (const element of array) {
+        $("#" + element).attr("disabled", true);
+      }
       }      
      
     });
