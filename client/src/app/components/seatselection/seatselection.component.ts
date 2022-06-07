@@ -114,8 +114,8 @@ bookingFunction(){
   let totalseats:number = Number( _totalseats);
   let totalamount =  ticketcost*totalseats;
    let options = {
-        key: "rzp_test_ttpGgVOFIDMQbw",
-        key_secret:"0aYr4AMuz4itRkvIFVQQRTLx",
+        key: "rzp_test_2lG64jwttsvf1F",
+        key_secret:"TyajGDOFTlkegnlmdJkpYo6X",
         amount:  totalamount*100,
         currency:"INR",
         name: localStorage.getItem("moviename"),
