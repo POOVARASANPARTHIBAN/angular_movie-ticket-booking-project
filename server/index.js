@@ -218,7 +218,7 @@ app.get("/getallmovie", (_req, res) => {
     if (data) {
       res.json(data);
     } else {
-      console.log("Feedbacks doesn't exist");
+      console.log("Movies doesn't exist");
     }
   });
 });
@@ -250,7 +250,7 @@ app.get("/getalltheater", (_req, res) => {
     if (data) {
       res.json(data);
     } else {
-      console.log("Theaters doesn't exist");
+      console.log("Theater doesn't exist");
     }
   });
 });
@@ -267,7 +267,7 @@ app.get("/getallbooking", (_req, res) => {
       console.log(data);
       res.json(data);
     } else {
-      console.log("Feedbacks doesn't exist");
+      console.log("Allbookings doesn't exist");
     }
   });
 });
@@ -286,7 +286,7 @@ app.get("/getmybooking/:id", (req, res) => {
       console.log(data);
       res.json(data);
     } else {
-      console.log("Feedbacks doesn't exist");
+      console.log("Mybookings doesn't exist");
     }
   });
 });
