@@ -5,6 +5,7 @@ const port = 8000;
 const cors = require("cors");
 const dbconnection = require("../server/connection/db");
 const storedb = require("./connection/nanodb");
+const { response } = require("express");
 app.use(connection.static("public"));
 app.use(bodyparser.json());
 app.use(
@@ -32,31 +33,6 @@ app.post("/postuser", (request, response) => {
     .catch((err) => {
       response.send(err);
     });
-});
-
-app.post("/addlocation", (request, response) => {
-  try {
-    console.log(request);
-    let object = {
-      locationName: request.body.locationName,
-      type: "locations",
-    };
-
-    if (object.locationName == "") {
-      res.send("hiiii");
-    }
-
-    dbconnection
-      .insert(object)
-      .then((data) => {
-        response.send(data);
-      })
-      .catch((err) => {
-        response.send(err.message);
-      });
-  } catch (err) {
-    response.send(err);
-  }
 });
 
 app.post("/addbooking/", (request, response) => {
@@ -122,15 +98,20 @@ app.get("/checkuser/:id", (req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      console.log(data);
-      res.json(data);
-    } else {
-      console.log("EmailId doesn't exist");
-      res.send("null");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        res.json(data);
+      } else {
+        console.log("EmailId doesn't exist");
+        res.send("null");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/chooselocation/:id", (req, res) => {
@@ -142,14 +123,19 @@ app.get("/chooselocation/:id", (req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      console.log(data);
-      res.json(data);
-    } else {
-      console.log("Theater doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        res.json(data);
+      } else {
+        console.log("Theater doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/choosemovie/:id", (req, res) => {
@@ -161,14 +147,19 @@ app.get("/choosemovie/:id", (req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data1) => {
-    if (data1) {
-      console.log(data1);
-      res.json(data1);
-    } else {
-      console.log("movie doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data1) => {
+      if (data1) {
+        console.log(data1);
+        res.json(data1);
+      } else {
+        console.log("movie doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/getmoviedetails/:id", (req, res) => {
@@ -180,14 +171,19 @@ app.get("/getmoviedetails/:id", (req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      console.log(data);
-      res.json(data);
-    } else {
-      console.log("Movie doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        res.json(data);
+      } else {
+        console.log("Movie doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/getfeedback", (_request, res) => {
@@ -197,14 +193,19 @@ app.get("/getfeedback", (_request, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      console.log(data);
-      res.json(data);
-    } else {
-      console.log("Feedbacks doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        res.json(data);
+      } else {
+        console.log("Feedbacks doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/getallmovie", (_req, res) => {
@@ -214,13 +215,18 @@ app.get("/getallmovie", (_req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      res.json(data);
-    } else {
-      console.log("Movies doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        console.log("Movies doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/getalllocation", (_req, res) => {
@@ -230,13 +236,18 @@ app.get("/getalllocation", (_req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      res.json(data);
-    } else {
-      console.log("Locations doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        console.log("Locations doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/getalltheater", (_req, res) => {
@@ -246,13 +257,18 @@ app.get("/getalltheater", (_req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      res.json(data);
-    } else {
-      console.log("Theater doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        res.json(data);
+      } else {
+        console.log("Theater doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/getallbooking", (_req, res) => {
@@ -262,14 +278,19 @@ app.get("/getallbooking", (_req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      console.log(data);
-      res.json(data);
-    } else {
-      console.log("Allbookings doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        res.json(data);
+      } else {
+        console.log("Allbookings doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/getmybooking/:id", (req, res) => {
@@ -281,14 +302,19 @@ app.get("/getmybooking/:id", (req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      console.log(data);
-      res.json(data);
-    } else {
-      console.log("Mybookings doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        res.json(data);
+      } else {
+        console.log("Mybookings doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.get("/getdata/:theatername/:moviename/:bookingdate", (req, res) => {
@@ -304,14 +330,19 @@ app.get("/getdata/:theatername/:moviename/:bookingdate", (req, res) => {
     },
   };
 
-  storedb.moviedb.find(object).then((data) => {
-    if (data) {
-      console.log(data);
-      res.json(data);
-    } else {
-      console.log("data doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .find(object)
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        res.json(data);
+      } else {
+        console.log("data doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.delete("/deletemovie/:id/:_rev", (req, res) => {
@@ -320,14 +351,19 @@ app.delete("/deletemovie/:id/:_rev", (req, res) => {
   let id = req.params.id;
   let rev = req.params._rev;
 
-  storedb.moviedb.destroy(id, rev, "movies").then((data) => {
-    if (data) {
-      console.log(data);
-      res.json(data);
-    } else {
-      console.log("movie doesn't exist");
-    }
-  });
+  storedb.moviedb
+    .destroy(id, rev, "movies")
+    .then((data) => {
+      if (data) {
+        console.log(data);
+        res.json(data);
+      } else {
+        console.log("movie doesn't exist");
+      }
+    })
+    .catch((err) => {
+      response.send(err);
+    });
 });
 
 app.post("/addtheater", (request, response) => {

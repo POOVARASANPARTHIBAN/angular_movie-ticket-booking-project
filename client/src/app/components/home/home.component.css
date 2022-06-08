@@ -5,6 +5,7 @@
     display: flex;
     height: 85%;
     align-items: center;
+    overflow: hidden;
 }
 .col{
     flex-basis: 50%;   
@@ -80,7 +81,7 @@
     background-image: url('../../../assets/images/doctor-strange.jpg');
 }
 .card3{
-    background-image: url('../../../assets/images/beasT.jpg');
+    background-image: url('../../../assets/images/vikram.jpg');
 }
 .card4 {
     background-image: url('../../../assets/images/Cobra.jpg');

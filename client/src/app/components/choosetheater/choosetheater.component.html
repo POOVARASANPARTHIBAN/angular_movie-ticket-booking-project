@@ -7,7 +7,8 @@
                     <h2>- Choose Theater -</h2>
                 </div>
 <hr>
-                <div class="theater" data-validate="Please enter username">
+                <div class="theater" >
+                    <label>Theater :</label>
                     <select class="input" type="text" #theatername="ngModel" name="theatername"
                         [(ngModel)]="choosetheaterId.theaterId" id="theatername">
                         <option value="">Choose Theater</option>

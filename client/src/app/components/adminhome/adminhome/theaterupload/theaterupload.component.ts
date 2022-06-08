@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from 'Models/location';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-theaterupload',
   templateUrl: './theaterupload.component.html',
@@ -9,7 +10,7 @@ import { Location } from 'Models/location';
 })
 export class TheateruploadComponent implements OnInit {
 
-  constructor(private sharedservice : SharedService,private acrouter:ActivatedRoute) { }
+  constructor(private sharedservice : SharedService,private acrouter:ActivatedRoute, private toastr:ToastrService) { }
 
   theaterupload : any = {
     _id : '',
@@ -32,8 +33,15 @@ export class TheateruploadComponent implements OnInit {
     console.log(this.theaterupload);
    this.sharedservice.addtheater(this.theaterupload).subscribe((data) =>{
      console.log(data);
-     alert("Theater Uploaded Successfully!!");
-   })}
+     if(data.error){
+      this.toastr.error(data.message);
+     }
+     else{
+      this.toastr.success("Data store successful.!!");
+       console.log(data);
+     }
+   });
+}
   
 
   public data: Location[] = [];

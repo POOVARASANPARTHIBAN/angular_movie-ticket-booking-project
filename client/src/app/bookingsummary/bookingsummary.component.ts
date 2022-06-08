@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from '../service/shared.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-bookingsummary',
@@ -9,7 +10,7 @@ import { SharedService } from '../service/shared.service';
 })
 export class BookingsummaryComponent implements OnInit {
 
-  constructor(private sharedservice : SharedService,private route:Router) { }
+  constructor(private sharedservice : SharedService,private route:Router, private toastr: ToastrService) { }
 bookingdata:any = {
     currentdate: Date.now,
     username: localStorage.getItem("username"),
@@ -29,7 +30,13 @@ bookingdata:any = {
       console.log(this.bookingdata)
    this.sharedservice.addbooking(this.bookingdata).subscribe((data) =>{
      console.log(data);
-     alert("Booking Was Successfull");
+     if(data){
+      this.toastr.success("Your Booking Was Successfull.!!");
+     }
+     else{
+      this.toastr.error("Booking Not Complete..!");
+       console.log(data)
+     }
    }) 
     this.route.navigate(['/userhome']);
   }

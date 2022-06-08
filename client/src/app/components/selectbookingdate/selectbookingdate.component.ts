@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/service/shared.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-selectbookingdate',
@@ -9,7 +10,7 @@ import { SharedService } from 'src/app/service/shared.service';
 })
 export class SelectbookingdateComponent implements OnInit {
   mindate:any;
-  constructor(private sharedservice: SharedService,private Route: Router) { }
+  constructor(private sharedservice: SharedService,private Route: Router, private toastr: ToastrService) { }
   choosemovie: any = {
     moviename:localStorage.getItem("moviename"),
     bookingdate:Date.now
@@ -45,7 +46,7 @@ export class SelectbookingdateComponent implements OnInit {
   }
   onSubmit(){
     if(this.choosemovie.bookingdate == "function now() { [native code] }"){
-      alert("please select booking date");
+      this.toastr.error("Please Select Booking Date.!!");
     }else{
     localStorage.setItem("bookingdate",this.choosemovie.bookingdate)
     this.Route.navigate(['/seatselection']);

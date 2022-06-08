@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-feedback',
@@ -8,7 +9,7 @@ import { SharedService } from 'src/app/service/shared.service';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor(private sharedservice:SharedService) { }
+  constructor(private sharedservice:SharedService, private toastr: ToastrService) { }
   feedback : any = {
     _id : '',
     username: localStorage.getItem("username"),
@@ -22,11 +23,11 @@ export class FeedbackComponent implements OnInit {
   onSubmit(){
     console.log(this.feedback);
     if(this.feedback.message == ""){
-      alert("please enter feedback");
+      this.toastr.error("Please Enter Feedback.!!");
     }else{
    this.sharedservice.addfeedback(this.feedback).subscribe((data) =>{
      console.log(data);
-     alert("Feedback Uploaded Successfully!!");
+     this.toastr.success("Your Feedback Updated.!!");
    })
   }
   }

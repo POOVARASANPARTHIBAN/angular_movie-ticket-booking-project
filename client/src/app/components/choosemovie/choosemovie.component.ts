@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/service/shared.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-choosemovie',
@@ -9,7 +10,7 @@ import { SharedService } from 'src/app/service/shared.service';
 })
 export class ChoosemovieComponent implements OnInit {
 
-  constructor(private sharedservice:SharedService, private route:Router) { }
+  constructor(private sharedservice:SharedService, private route:Router, private toastr: ToastrService) { }
 choosemovie: any = {
     theaterId:localStorage.getItem("theaterId")
   }
@@ -35,7 +36,7 @@ choosemovie: any = {
 
   onSubmit(){
     if(this.choosemoviename.moviename === ""){
-      alert("please select moviename")
+      this.toastr.error("Please Choose Movie.!!");
     }else{
     localStorage.setItem("moviename",this.choosemoviename.moviename);
     this.route.navigate(['/selectdate']);

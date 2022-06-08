@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
 import { WindowRefService } from 'src/app/window-ref.service';
+import { ToastrService } from 'ngx-toastr';
 
 declare let $: any;
 
@@ -13,7 +14,7 @@ export class SeatselectionComponent implements OnInit {
   
  
 
-  constructor(private sharedservice:SharedService,private winRef: WindowRefService,) { }
+  constructor(private sharedservice:SharedService,private winRef: WindowRefService, private toastr: ToastrService) { }
   value = false;
  allSeatarray:any = [];
   bookingdata:any = {
@@ -45,7 +46,7 @@ export class SeatselectionComponent implements OnInit {
 
   selectSeat(username:string,totalseats:string){
      if (username === "" || totalseats === "") {
-      alert("please enter name and ceats");
+      this.toastr.error("Please Enter Name and How many Seats.!!");
     } else {
       $(".inputForm *").prop("disabled", true);
       $(".seatStructure *").prop("disabled", false);
@@ -60,7 +61,8 @@ export class SeatselectionComponent implements OnInit {
       for(let i=0;i<length;i++){
        let bookedseats = res.docs[i].seatnames;
         let array = bookedseats.split(",");
-        this.datalist.push(res.docs[i].seatnames);   
+        this.datalist.push(res.docs[i].seatnames);  
+
       for (const element of array) {
         $("#" + element).attr("disabled", true);
       }
@@ -78,17 +80,19 @@ export class SeatselectionComponent implements OnInit {
       $("#pay-btn").show();
       let allNameVals = [];
       let allNumberVals = [];
-      let allSeatsVals = [];
+      let allSeatsVals: any[] = [];
 
       allNameVals.push(username);
       allNumberVals.push(totalseats);
-      
-      
+      console.log($("#seatsBlock :checked"))
+      console.log($("#seatsBlock :checked").length)
 
-      for(const element of $("#seatsBlock :checked")){
-        allSeatsVals.push(element.value);
-        this.allSeatarray.push(element.value);
-      }
+      $.each($("#seatsBlock :checked"), (index: any, item: any) => {
+        console.log(index,item)
+        allSeatsVals.push(item.value);
+        this.allSeatarray.push(item.value);
+      })
+
 
       console.log(this.allSeatarray);
       $("#nameDisplay").val(allNameVals);
@@ -98,7 +102,8 @@ export class SeatselectionComponent implements OnInit {
       localStorage.setItem("totalseats",totalseats);
       localStorage.setItem("seatnames",this.allSeatarray.toString());
     } else {
-      alert("Please select " + totalseats + " seats");
+      this.toastr.error(" Please Select " + totalseats + " Seats ");
+
     }
   }
 

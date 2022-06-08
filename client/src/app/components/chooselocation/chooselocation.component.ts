@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from 'Models/location';
 import { SharedService } from 'src/app/service/shared.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-chooselocation',
@@ -10,7 +11,7 @@ import { SharedService } from 'src/app/service/shared.service';
 })
 export class ChooselocationComponent implements OnInit {
 
-  constructor(private sharedservice:SharedService, private route:Router) { }
+  constructor(private sharedservice:SharedService, private route:Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.sharedservice.getalllocation().subscribe((data)=>{
@@ -28,7 +29,7 @@ export class ChooselocationComponent implements OnInit {
   }
   onSubmit(){
     if(this.chooselocation.locationId === ""){
-      alert("please choose location")
+      this.toastr.error("Please Choose Your Location");
     }else{
     localStorage.setItem("userlocation",this.chooselocation.locationId);
      this.route.navigate(['/choosetheater']);
