@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ChooselocationComponent implements OnInit {
 
-  constructor(private sharedservice:SharedService, private route:Router, private toastr: ToastrService) { }
+  constructor(private sharedservice:SharedService, private router:Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.sharedservice.getalllocation().subscribe((data)=>{
@@ -23,7 +23,6 @@ export class ChooselocationComponent implements OnInit {
       }
     })
   }
-
   chooselocation: any = {
     locationId:''
   }
@@ -31,9 +30,12 @@ export class ChooselocationComponent implements OnInit {
     if(this.chooselocation.locationId === ""){
       this.toastr.error("Please Choose Your Location");
     }else{
-    localStorage.setItem("userlocation",this.chooselocation.locationId);
-     this.route.navigate(['/choosetheater']);
-  }}
+    localStorage.setItem("userlocation",this.chooselocation.locationId)
+    this.router.navigate(
+      ['/choosetheater'],
+      {queryParams: { locationId: this.chooselocation.locationId }}
+    )}
+  }
 
   public data : Location[] = [];
 }

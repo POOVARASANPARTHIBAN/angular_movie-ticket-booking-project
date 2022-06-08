@@ -110,31 +110,7 @@ app.get("/checkuser/:id", (req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
-    });
-});
-
-app.get("/chooselocation/:id", (req, res) => {
-  console.log("retreived......", req.params.id);
-  let object = {
-    selector: {
-      theaterlocationId: req.params.id,
-      type: "theaters",
-    },
-  };
-
-  storedb.moviedb
-    .find(object)
-    .then((data) => {
-      if (data) {
-        console.log(data);
-        res.json(data);
-      } else {
-        console.log("Theater doesn't exist");
-      }
-    })
-    .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -158,7 +134,7 @@ app.get("/choosemovie/:id", (req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -182,7 +158,7 @@ app.get("/getmoviedetails/:id", (req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -204,7 +180,7 @@ app.get("/getfeedback", (_request, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -225,7 +201,7 @@ app.get("/getallmovie", (_req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -246,7 +222,7 @@ app.get("/getalllocation", (_req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -267,7 +243,7 @@ app.get("/getalltheater", (_req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -289,7 +265,7 @@ app.get("/getallbooking", (_req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -313,7 +289,7 @@ app.get("/getmybooking/:id", (req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -341,7 +317,7 @@ app.get("/getdata/:theatername/:moviename/:bookingdate", (req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -362,7 +338,7 @@ app.delete("/deletemovie/:id/:_rev", (req, res) => {
       }
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 

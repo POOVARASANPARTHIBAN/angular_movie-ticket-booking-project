@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Theater } from 'Models/theater';
-import { SharedService } from 'src/app/service/shared.service';
 import { ToastrService } from 'ngx-toastr';
+import { CouchdbService } from 'src/app/service/couchdb.service';
 
 @Component({
   selector: 'app-choosetheater',
@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ChoosetheaterComponent implements OnInit {
 
-  constructor(private sharedservice:SharedService, private route:Router, private toastr: ToastrService) { }
+  constructor(private route:Router, private toastr: ToastrService, private api:CouchdbService, private router:ActivatedRoute) { }
  choosetheater: any = {
     locationId:localStorage.getItem("userlocation")
   }
@@ -19,17 +19,27 @@ export class ChoosetheaterComponent implements OnInit {
     theaterId:'',
   }
    theaterlist:any = []
-
+   theaterlocationId: any ;
   ngOnInit(): void {
-   
-    this.sharedservice.chooselocation(this.choosetheater).subscribe((res) =>{
-      let length = res.docs.length;
+
+    this.router.queryParams.subscribe(params => {
+      console.log(params)
+    this.theaterlocationId = params.locationId;
+    });
+    const data = {
+      "keys": [ "theaters" + this.theaterlocationId ], 
+      "include_docs": true
+    }
+    this.api.getThreater(data).subscribe((res) => {
+      console.log(res);
+      let response:any = res
+      let length = response.rows.length;
       this.theaterlist = []
       for(let i=0;i<length;i++){
-        this.theaterlist.push(res.docs[i]);
-        console.log(this.theaterlist);
+        this.theaterlist.push(response.rows[i].doc);
       }
-    }); 
+      console.log(this.theaterlist);
+    })
   }
   onSubmit(){
     if(this.choosetheaterId.theaterId === ""){
@@ -39,6 +49,5 @@ export class ChoosetheaterComponent implements OnInit {
     this.route.navigate(['/choosemovie']);
   }}
 
-  
   public data: Theater[]=[];
 }

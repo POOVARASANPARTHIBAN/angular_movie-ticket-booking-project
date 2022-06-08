@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CouchdbService {
+
   url ="https://75c481c7-3349-4ad5-86c0-311dd22187eb-bluemix.cloudantnosqldb.appdomain.cloud/";
   dbUserName = "apikey-v2-2mxwaz89u58vkezj2e5jfc41xn3komuaq1j49fhhmu8p";
   dbPassword = "58de0ca6ebd4250a97d0a7d300191f68";
@@ -24,6 +25,11 @@ export class CouchdbService {
   }
   get(data:any): Observable<{}> { 
     const url = this.url +'moviebookingapp/_find';
+    return this.http.post( url,data, this.httpOptions)
+
+  }
+  getThreater(data:any){
+    const url = "https://75c481c7-3349-4ad5-86c0-311dd22187eb-bluemix.cloudantnosqldb.appdomain.cloud/moviebookingapp/_design/locations/_view/location-id"
     return this.http.post( url,data, this.httpOptions)
 
   }
