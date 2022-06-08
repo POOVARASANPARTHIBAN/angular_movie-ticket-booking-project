@@ -5,7 +5,6 @@ const port = 8000;
 const cors = require("cors");
 const dbconnection = require("../server/connection/db");
 const storedb = require("./connection/nanodb");
-const { response } = require("express");
 app.use(connection.static("public"));
 app.use(bodyparser.json());
 app.use(
@@ -14,7 +13,7 @@ app.use(
   })
 );
 
-app.post("/postuser", (request, response) => {
+app.post("/postuser", (request, res) => {
   console.log(request);
   let object = {
     username: request.body.username,
@@ -28,14 +27,14 @@ app.post("/postuser", (request, response) => {
   dbconnection
     .insert(object)
     .then((data) => {
-      response.send(data);
+      res.send(data);
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
-app.post("/addbooking/", (request, response) => {
+app.post("/addbooking/", (request, res) => {
   console.log(request);
   let object = {
     username: request.body.username,
@@ -56,14 +55,14 @@ app.post("/addbooking/", (request, response) => {
   dbconnection
     .insert(object)
     .then((data) => {
-      response.send(data);
+      res.send(data);
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
-app.post("/addmovie", (request, response) => {
+app.post("/addmovie", (request, res) => {
   console.log(request);
   let object = {
     moviename: request.body.moviename,
@@ -82,10 +81,10 @@ app.post("/addmovie", (request, response) => {
   dbconnection
     .insert(object)
     .then((data) => {
-      response.send(data);
+      res.send(data);
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
@@ -342,7 +341,7 @@ app.delete("/deletemovie/:id/:_rev", (req, res) => {
     });
 });
 
-app.post("/addtheater", (request, response) => {
+app.post("/addtheater", (request, res) => {
   console.log(request);
   let object = {
     theatername: request.body.theatername,
@@ -354,14 +353,14 @@ app.post("/addtheater", (request, response) => {
   dbconnection
     .insert(object)
     .then((data) => {
-      response.send(data);
+      res.send(data);
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
-app.post("/addfeedback", (request, response) => {
+app.post("/addfeedback", (request, res) => {
   console.log(request);
   let object = {
     username: request.body.username,
@@ -372,10 +371,10 @@ app.post("/addfeedback", (request, response) => {
   dbconnection
     .insert(object)
     .then((data) => {
-      response.send(data);
+      res.send(data);
     })
     .catch((err) => {
-      response.send(err);
+      res.send(err);
     });
 });
 
