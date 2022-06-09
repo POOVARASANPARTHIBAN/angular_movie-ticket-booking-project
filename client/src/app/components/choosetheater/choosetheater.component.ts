@@ -16,18 +16,18 @@ export class ChoosetheaterComponent implements OnInit {
     locationId:localStorage.getItem("userlocation")
   }
   choosetheaterId: any = {
-    theaterId:'',
+    theaters:'',
   }
    theaterlist:any = []
-   theaterlocationId: any ;
+   locations: any ;
   ngOnInit(): void {
 
     this.router.queryParams.subscribe(params => {
       console.log(params)
-    this.theaterlocationId = params.locationId;
+    this.locations = params.locationId;
     });
     const data = {
-      "keys": [ "theaters" + this.theaterlocationId ], 
+      "keys": [ "theaters" + this.locations], 
       "include_docs": true
     }
     this.api.getThreater(data).subscribe((res) => {
@@ -44,10 +44,10 @@ export class ChoosetheaterComponent implements OnInit {
     });
   }
   onSubmit(){
-    if(this.choosetheaterId.theaterId === ""){
+    if(this.choosetheaterId.theaters === ""){
       this.toastr.error("Please Choose Theater.!!");
     }else{
-    localStorage.setItem("theaterId",this.choosetheaterId.theaterId);
+    localStorage.setItem("theaters",this.choosetheaterId.theaters);
     this.route.navigate(['/choosemovie']);
   }}
 

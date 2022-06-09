@@ -10,7 +10,7 @@
                 <div class="theater" >
                     <label>Theater :</label>
                     <select class="input" type="text" #theatername="ngModel" name="theatername"
-                        [(ngModel)]="choosetheaterId.theaterId" id="theatername">
+                        [(ngModel)]="choosetheaterId.theaters" id="theatername">
                         <option value="">Choose Theater</option>
                         <option *ngFor="let theater of theaterlist" [value]="theater._id">
                             {{theater.theatername}}</option>

@@ -12,7 +12,7 @@ export class ChoosemovieComponent implements OnInit {
 
   constructor(private sharedservice:SharedService, private route:Router, private toastr: ToastrService) { }
 choosemovie: any = {
-    theaterId:localStorage.getItem("theaterId")
+    theaterId:localStorage.getItem("theaters")
   }
   choosemoviename: any = {
     moviename:'',

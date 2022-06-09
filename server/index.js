@@ -69,7 +69,7 @@ app.post("/addmovie", (request, res) => {
     movieimageurl: request.body.movieimageurl,
     movievideourl: request.body.movievideourl,
     moviedescription: request.body.moviedescription,
-    theaterId: request.body.theaterId,
+    theaters: request.body.theaterId,
     ticketcost: request.body.ticketcost,
     actorname: request.body.actorname,
     directorname: request.body.directorname,
@@ -117,7 +117,7 @@ app.get("/choosemovie/:id", (req, res) => {
   console.log("retreived......", req.params.id);
   let object = {
     selector: {
-      theaterId: req.params.id,
+      theaters: req.params.id,
       type: "movies",
     },
   };
@@ -346,7 +346,7 @@ app.post("/addtheater", (request, res) => {
   let object = {
     theatername: request.body.theatername,
     totalseats: request.body.totalseats,
-    theaterlocationId: request.body.theaterlocationId,
+    locations: request.body.theaterlocationId,
     type: "theaters",
   };
 

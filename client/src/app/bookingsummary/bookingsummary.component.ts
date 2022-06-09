@@ -17,7 +17,7 @@ bookingdata:any = {
     email:  localStorage.getItem("email"),
     mobile: localStorage.getItem("mobile"),
     bookingdate: localStorage.getItem("bookingdate"),
-    theaterId:localStorage.getItem("theaterId"),
+    theaterId:localStorage.getItem("theaters"),
     moviename: localStorage.getItem("moviename"),
     moviewatchers: localStorage.getItem("moviewatchers"),
     totalseats: localStorage.getItem("totalseats"),
@@ -36,8 +36,18 @@ bookingdata:any = {
      else{
       this.toastr.error("Booking Not Complete..!");
        console.log(data)
-     }
+     } 
    }) 
+      localStorage.removeItem("userlocation")
+      localStorage.removeItem("ticketcost")
+      localStorage.removeItem("releasedate")
+      localStorage.removeItem("outdate")
+      localStorage.removeItem("bookingdate")
+      localStorage.removeItem("theaters")
+      localStorage.removeItem("moviename")
+      localStorage.removeItem("moviewatchers")
+      localStorage.removeItem("totalseats")
+      localStorage.removeItem("seatnames")
     this.route.navigate(['/userhome']);
   }
 
