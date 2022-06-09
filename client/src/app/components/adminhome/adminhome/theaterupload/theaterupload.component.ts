@@ -13,7 +13,6 @@ export class TheateruploadComponent implements OnInit {
   constructor(private sharedservice : SharedService,private acrouter:ActivatedRoute, private toastr:ToastrService) { }
 
   theaterupload : any = {
-    _id : '',
     theatername : '',
     totalseats : '',
     theaterlocation : '',
@@ -40,9 +39,14 @@ export class TheateruploadComponent implements OnInit {
       this.toastr.success("Data store successful.!!");
        console.log(data);
      }
+     window.location.reload();
+   }, error => {
+     console.log(error);
    });
 }
-  
-
   public data: Location[] = [];
   }
+
+function reset() {
+  throw new Error('Function not implemented.');
+}

@@ -8,36 +8,36 @@
                     <h2>Choose Theater</h2>
                 </div>
  <hr>
-                <div class="bookingdate" data-validate="Please enter username">
+                <div class="bookingdate" >
                     <label>UserName :</label>
                     <input class="input" type="text" #username="ngModel" name="username"
-                        [(ngModel)]="selectdate.username" id="username" placeholder="Username"
-                        [value]="selectdate.username" />
+                        [(ngModel)]="selectdate.username" id="username"
+                        [value]="selectdate.username" readonly/>
                 </div>
 
-                <div class="bookingdate" data-validate="Please enter moviename">
+                <div class="bookingdate" >
                     <label>MovieName :</label>
                     <input class="input" type="text" #moviename="ngModel" name="moviename"
-                        [(ngModel)]="selectdate.moviename" id="moviename" placeholder="Moviename"
-                        [value]="selectdate.moviename" />
+                        [(ngModel)]="selectdate.moviename" id="moviename"
+                        [value]="selectdate.moviename" readonly/>
                 </div>
 
-                <div class="bookingdate" data-validate="Please enter password">
+                <div class="bookingdate">
                     <label>TicketCost :</label>
                     <input class="input" type="text" #ticketcost="ngModel" name="ticketcost"
-                        [(ngModel)]="selectdate.ticketcost" id="ticketcost" placeholder="Ticket cost"
-                        [value]="selectdate.ticketcost" />
+                        [(ngModel)]="selectdate.ticketcost" id="ticketcost"
+                        [value]="selectdate.ticketcost" readonly/>
                 </div>
                 
-                <div class="bookingdate" data-validate="Please enter username">
+                <div class="bookingdate">
                     <label> Choose Date : </label>
                     <input class="input" type="date" #bookingdate="ngModel" name="bookingdate"
-                        [(ngModel)]="choosemovie.bookingdate" id="txtDate" placeholder="Booking date"
+                        [(ngModel)]="choosemovie.bookingdate" id="txtDate"
                         min="{{mindate}}" [max]="selectdate.outdate"/>
                 </div>
 <br />
                 <div class="container-form-btn">
-                    <button class="form-btn" type="submit" routerLink="login">
+                    <button class="form-btn" type="submit">
                         Select Seats
                     </button>
                 </div>

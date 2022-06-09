@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class AdminhomeComponent implements OnInit {
 
   details : any = {
-    _id : '',
-    _rev : '',
     username : '',
     password : '',
     email : '',

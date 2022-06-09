@@ -14,7 +14,6 @@ export class MovieuploadComponent implements OnInit {
   constructor(private sharedservice : SharedService,private toastr:ToastrService) { }
 
   movieupload : any = {
-    _id : '',
     moviename : '',
     movieimageurl : '',
     movievideourl : '',
@@ -48,6 +47,7 @@ export class MovieuploadComponent implements OnInit {
       this.toastr.success("Data store successful.!!");
        console.log(data);
      }
+     window.location.reload();
    }
    )}
 public data : Theater[] = [];

@@ -12,11 +12,9 @@ declare let $: any;
 })
 export class SeatselectionComponent implements OnInit {
   
- 
-
   constructor(private sharedservice:SharedService,private winRef: WindowRefService, private toastr: ToastrService) { }
   value = false;
- allSeatarray:any = [];
+  allSeatarray:any = [];
   bookingdata:any = {
     currentdate: Date.now,
     username: localStorage.getItem("username"),
@@ -66,12 +64,10 @@ export class SeatselectionComponent implements OnInit {
       for (const element of array) {
         $("#" + element).attr("disabled", true);
       }
-      }      
-     
+      }       
     });
     }
   }
-
   confirmSelection(username:string,totalseats:string){
     if ($("input:checked").length == totalseats) {
       $(".seatStructure *").prop("disabled", true);
@@ -91,9 +87,7 @@ export class SeatselectionComponent implements OnInit {
         console.log(index,item)
         allSeatsVals.push(item.value);
         this.allSeatarray.push(item.value);
-      })
-
-
+      });
       console.log(this.allSeatarray);
       $("#nameDisplay").val(allNameVals);
       $("#NumberDisplay").val(allNumberVals);
@@ -106,12 +100,7 @@ export class SeatselectionComponent implements OnInit {
 
     }
   }
-
-  
-
-
 bookingFunction(){
-  
   let _ticketcost = localStorage.getItem("ticketcost");
   let ticketcost:number = Number( _ticketcost);
   let _totalseats = localStorage.getItem("totalseats");

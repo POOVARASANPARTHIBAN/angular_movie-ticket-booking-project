@@ -31,6 +31,8 @@ choosemovie: any = {
         this.movielist.push(res.docs[i]);
         console.log(this.movielist);
       }     
+    },error =>{
+      console.log(error)
     });
   }
 

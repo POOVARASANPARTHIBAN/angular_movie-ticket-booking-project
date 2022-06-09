@@ -18,6 +18,8 @@ export class RetrievebookingComponent implements OnInit {
       console.log(data)
       this.data = lodash.sortBy(data.docs,'lastmodifieddate')
             console.log(this.data);
+    },error => {
+      console.log(error);
     });
   }
   public data: Retrievebooking[] = [];

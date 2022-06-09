@@ -18,8 +18,7 @@ export class AdminprofileComponent implements OnInit {
   }
 
   details : any = {
-    _id : '',
-    _rev : '',
+
     username : '',
     password : '',
     email : '',

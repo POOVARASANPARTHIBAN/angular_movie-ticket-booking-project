@@ -1,4 +1,5 @@
-.navbar-inverse .navbar-nav>li>a {
+
+.navbar-inverse.navbar-inverse .navbar-nav>li>a {
     color: white;
 }
 

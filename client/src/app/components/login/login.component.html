@@ -7,14 +7,16 @@
                     <h2>- LOGIN -</h2>
                 </div>
 <hr>
-
                 <div class="login">
-                    <label>User Email :</label>
-                    <input type="text" #email="ngModel" name="email" required [(ngModel)]="login.email"
-                        id="email" placeholder="Email" />
-                        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                    <label>Email :</label>
+                    <input  type="email" name="email" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required  [(ngModel)]="login.email"
+                        id="email"/>
+                        <div *ngIf="email.invalid && (email.dirty || email.touched)" >
                             <div *ngIf="email.errors?.required" style=" color: red">
-                                *E-MAIL is required
+                                *Email is required
+                            </div>
+                            <div *ngIf="email.errors && email.errors.pattern" style="color: red;">
+                                *Email is invalid
                             </div>
                         </div>
                 </div>
@@ -22,7 +24,7 @@
                 <div class="login">
                     <label>Password :</label>
                     <input type="password" #password="ngModel" name="password" required
-                        [(ngModel)]="login.password" id="password" placeholder="Password"/>
+                        [(ngModel)]="login.password" id="password"/>
                         <div *ngIf="password.invalid && (password.dirty || password.touched)">
                             <div *ngIf="password.errors?.required" style="color: red">*Enter valid PASSWORD.</div>      
                         </div>  

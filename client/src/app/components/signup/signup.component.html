@@ -18,14 +18,16 @@
                 
                 <div class="signup">
                     <label>Email :</label>
-                    <input  type="email" name="email" #email="ngModel"  required [(ngModel)]="signup.email"
-                        id="email" />
+                    <input  type="email" name="email" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required  [(ngModel)]="signup.email"
+                        id="email" (change)="signupValidation()" />
                         <div *ngIf="email.invalid && (email.dirty || email.touched)" >
                             <div *ngIf="email.errors?.required" style=" color: red">
-                                Email is required
+                                *Email is required
+                            </div>
+                            <div *ngIf="email.errors && email.errors.pattern" style="color: red;">
+                                *Email is invalid
                             </div>
                         </div>
-
                 </div>
 
                 <div class="signup">
@@ -58,7 +60,7 @@
                 </div>
                 <br />
                 <div class="container-form-btn">
-                    <button class="form-btn" type="submit" routerLink="login">
+                    <button [ngClass]="!submit ? 'form-btn-invalid' : 'form-btn'"  type="submit"  [disabled]="!submit">
                         Sign up
                     </button>
                 </div>

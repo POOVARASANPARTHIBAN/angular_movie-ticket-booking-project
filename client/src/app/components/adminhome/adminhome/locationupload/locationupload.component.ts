@@ -12,7 +12,6 @@ export class LocationuploadComponent implements OnInit {
   constructor(private api:CouchdbService, private toastr:ToastrService) { }
 
   location: any = {
-    // _id:'',
     locationName: ''
   }
 
@@ -30,7 +29,11 @@ export class LocationuploadComponent implements OnInit {
         this.toastr.success("Data store successful.!!");
          console.log(res);
        }
+       window.location.reload();
+     },error => {
+       console.log(error);
      });
+     
   }
 }
   

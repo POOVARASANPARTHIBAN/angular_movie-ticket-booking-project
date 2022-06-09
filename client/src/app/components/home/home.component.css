@@ -1,11 +1,9 @@
-
 .row{
     margin-top: 3%;
     margin-left: 75px;
     display: flex;
     height: 85%;
     align-items: center;
-    overflow: hidden;
 }
 .col{
     flex-basis: 50%;   
@@ -87,5 +85,5 @@
     background-image: url('../../../assets/images/Cobra.jpg');
 }
 .cards:hover{
-    transform: translateY(-10px);
+    transform: translateY(-3px);
 } 

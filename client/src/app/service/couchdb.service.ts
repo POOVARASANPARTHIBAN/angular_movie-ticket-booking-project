@@ -31,6 +31,18 @@ export class CouchdbService {
   getThreater(data:any){
     const url = "https://75c481c7-3349-4ad5-86c0-311dd22187eb-bluemix.cloudantnosqldb.appdomain.cloud/moviebookingapp/_design/locations/_view/location-id"
     return this.http.post( url,data, this.httpOptions)
-
   }
+
+  invalidSignUp(users:any){
+    const url =  this.url +'moviebookingapp/_find';
+    const object = {
+      selector: {
+        type: users.type,
+        email: users.email,
+      },
+    }; 
+  return this.http.post(url, object, {
+    headers: { Authorization: this.basicAuth },
+  });
+}
 }

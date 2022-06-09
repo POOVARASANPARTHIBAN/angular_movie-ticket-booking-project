@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
           this.route.navigate(['/viewmovie']);
       }else{
           this.sharedservice.login(this.login).subscribe((res) =>{
-            console.log("res",res);
           if(res.docs[0].email === this.login.email && res.docs[0].password === this.login.password){
             console.log(res.docs[0]);
               this.temp  = res.docs[0];
@@ -42,6 +41,7 @@ export class LoginComponent implements OnInit {
                   localStorage.setItem("_id",this.temp._id)
                   localStorage.setItem("_rev",this.temp._rev)
                   this.route.navigate(['/userhome']);
+                  this.toastr.success("Welcome..! Login Successful..!")
       }else{
         this.toastr.error("Invalid Email or Password..!");
           console.log(alert);

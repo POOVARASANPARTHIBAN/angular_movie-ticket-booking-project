@@ -9,8 +9,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./selectbookingdate.component.css']
 })
 export class SelectbookingdateComponent implements OnInit {
+
   mindate:any;
+
   constructor(private sharedservice: SharedService,private Route: Router, private toastr: ToastrService) { }
+
   choosemovie: any = {
     moviename:localStorage.getItem("moviename"),
     bookingdate:Date.now
@@ -22,14 +25,15 @@ export class SelectbookingdateComponent implements OnInit {
     releasedate:Date.now,
     outdate: Date.now
   }
+
   month:any;
   movieDetails:any = []
+
   ngOnInit(): void {
     this.pastdate();
     this.sharedservice.getmoviedetails(this.choosemovie).subscribe((res) =>{
       console.log(res);
       this.movieDetails = []
-    
         this.movieDetails.push(res.docs[0]);
         console.log(this.movieDetails);
         localStorage.setItem("ticketcost",res.docs[0].ticketcost);

@@ -21,7 +21,12 @@ export class ChooselocationComponent implements OnInit {
       {
         this.data.push(data.docs[i])
       }
-    })
+    },
+    error => {
+      console.log(error)
+    }
+    )
+    
   }
   chooselocation: any = {
     locationId:''

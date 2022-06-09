@@ -28,13 +28,9 @@ export class SharedService {
   constructor(private http : HttpClient) { }
 
   add(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.post<any>(this.apiurl , data);
   }
   login(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.get<any>(this.loginapi+data.email);
   }
   getallmovie(){
@@ -56,54 +52,35 @@ export class SharedService {
     return this.http.get<any>(this.getallBookingapi);
   }
   chooselocation(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.get<any>(this.chooselocationapi+data.locationId);
   }
   getmoviedetails(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.get<any>(this.getmoviedetailsapi+data.moviename);
   }
    getfeedback(){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.get<any>(this.getfeedbackapi);
   }
   deleteMovie(id:any,_rev:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.delete<any>(this.deletemovieapi+id+'/'+_rev);
   }
   choosemovie(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.get<any>(this.choosemovieapi+data.theaterId);
   }
   
   addmovie(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.post<any>(this.addmovieapi , data);
   }
    addbooking(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
+
     return this.http.post<any>( this.addbookingapi, data);
   }
    addtheater(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.post<any>(this.addtheaterapi , data);
   }
   addfeedback(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.post<any>(this.addfeedbackapi , data);
   }
   addlocation(data:any){
-    const headers = new Headers();
-    headers.append('Content-Type', 'application/json; charset=utf-8');
     return this.http.post<any>(this.addlocationapi , data);
   }
   

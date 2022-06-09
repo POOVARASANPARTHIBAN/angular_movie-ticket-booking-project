@@ -39,7 +39,9 @@ export class ChoosetheaterComponent implements OnInit {
         this.theaterlist.push(response.rows[i].doc);
       }
       console.log(this.theaterlist);
-    })
+    },error => {
+      console.log(error);
+    });
   }
   onSubmit(){
     if(this.choosetheaterId.theaterId === ""){
