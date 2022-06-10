@@ -4,19 +4,18 @@
         <div class="wrap">
             <form class="contain-form" #myForm="ngForm" (ngSubmit)="onSubmit()">
                 <div class="title">
-                    <h2>- Choose Location -</h2>
+                    <h2>-Choose Location-</h2>
                 </div>
 <hr>
-                <div class="location" data-validate="Please enter username">
+                <div class="location">
                     <label>Location :</label>
-                    <select class="input100" type="text" #location="ngModel" name="location"
-                        [(ngModel)]="chooselocation.locationId" id="location">
+                    <select class="input" type="text" #location="ngModel" name="locationId"
+                        [(ngModel)]="chooselocation.locationId" id="locationId">
                         <option value="">Select Location</option>
                         <option *ngFor="let item of data" [value]="item._id">{{item.locationName}}</option>
                     </select>
                 </div>
                 <br />
-
                 <div class="container-form-btn">
                     <button class="form-btn">
                         View Theater

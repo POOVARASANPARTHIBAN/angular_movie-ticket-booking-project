@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/service/shared.service';
 import { WindowRefService } from 'src/app/window-ref.service';
 import { ToastrService } from 'ngx-toastr';
-
 declare let $: any;
-
 @Component({
   selector: 'app-seatselection',
   templateUrl: './seatselection.component.html',
@@ -13,26 +11,26 @@ declare let $: any;
 export class SeatselectionComponent implements OnInit {
   
   constructor(private sharedservice:SharedService,private winRef: WindowRefService, private toastr: ToastrService) { }
-  value = false;
-  allSeatarray:any = [];
-  bookingdata:any = {
-    currentdate: Date.now,
-    username: localStorage.getItem("username"),
-    email:  localStorage.getItem("email"),
-    mobile: localStorage.getItem("mobile"),
-    bookingdate: localStorage.getItem("bookingdate"),
-    moviename: localStorage.getItem("moviename"),
-    moviewatchers: localStorage.getItem("moviewatchers"),
-    totalseats: localStorage.getItem("totalseats"),
-    seatnames: localStorage.getItem("seatnames"),
-    totalcost: Number(localStorage.getItem("ticketcost")) * Number(localStorage.getItem("totalseats"))
-  }
-  disabledatas: any = {
-    theatername:localStorage.getItem("theatername"),
-    moviename:localStorage.getItem("moviename"),
-    bookingdate:localStorage.getItem("bookingdate"),
-  }
-  datalist:any = []
+    value = false;
+    allSeatarray:any = [];
+    bookingdata:any = {
+      currentdate: Date.now,
+      username: localStorage.getItem("username"),
+      email:  localStorage.getItem("email"),
+      mobile: localStorage.getItem("mobile"),
+      bookingdate: localStorage.getItem("bookingdate"),
+      moviename: localStorage.getItem("moviename"),
+      moviewatchers: localStorage.getItem("moviewatchers"),
+      totalseats: localStorage.getItem("totalseats"),
+      seatnames: localStorage.getItem("seatnames"),
+      totalcost: Number(localStorage.getItem("ticketcost")) * Number(localStorage.getItem("totalseats"))
+    }
+    disabledatas: any = {
+      theatername:localStorage.getItem("theatername"),
+      moviename:localStorage.getItem("moviename"),
+      bookingdate:localStorage.getItem("bookingdate"),
+    }
+    datalist:any = []
   ngOnInit(): void {
     $(".seatStructure *").prop("disabled", true);
     $(".displayerBoxes *").prop("disabled", true);

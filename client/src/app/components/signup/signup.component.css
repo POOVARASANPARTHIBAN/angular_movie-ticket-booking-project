@@ -8,18 +8,17 @@
 
 }
 label{
-    display: inline-block;
-    width: 100px;
+  display: inline-block;
+    width: 110px;
     text-align: right;
-    color: rgb(0, 0, 0);
-    font-family: 'papyrus',sans-serif;
+  color: rgb(0, 0, 0);
+  font-family: 'Segoe UI',sans-serif;
 }
-
 .title{
-    padding: 8px;
-    color: rgb(0, 0, 0);
-    font-size: 20px;
-    font-family: 'papyrus',sans-serif;
+  padding: 8px;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: 'Segoe Print',sans-serif;
 
 }
 

@@ -25,8 +25,7 @@ export class ChooselocationComponent implements OnInit {
     error => {
       console.log(error)
     }
-    )
-    
+    ) 
   }
   chooselocation: any = {
     locationId:''

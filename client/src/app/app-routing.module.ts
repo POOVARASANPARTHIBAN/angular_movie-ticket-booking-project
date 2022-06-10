@@ -11,7 +11,6 @@ import { ViewmovieComponent } from './components/adminhome/adminhome/viewmovie/v
 import { ChooselocationComponent } from './components/chooselocation/chooselocation.component';
 import { ChoosemovieComponent } from './components/choosemovie/choosemovie.component';
 import { ChoosetheaterComponent } from './components/choosetheater/choosetheater.component';
-import { EventsComponent } from './components/events/events.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -45,7 +44,6 @@ const routes: Routes = [
   { path:'signup',component:SignupComponent },
   { path:'home',component:HomeComponent },
   { path:'locationupload', component:LocationuploadComponent},
-  { path:'events', component:EventsComponent},
   { path:'',component:HomeComponent }
   
  

@@ -25,12 +25,13 @@ export class SelectbookingdateComponent implements OnInit {
     releasedate:Date.now,
     outdate: Date.now
   }
-
   month:any;
   movieDetails:any = []
 
   ngOnInit(): void {
+    
     this.pastdate();
+
     this.sharedservice.getmoviedetails(this.choosemovie).subscribe((res) =>{
       console.log(res);
       this.movieDetails = []

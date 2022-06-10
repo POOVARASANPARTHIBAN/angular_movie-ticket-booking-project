@@ -15,10 +15,7 @@ choosemovie: any = {
     theaterId:localStorage.getItem("theaters")
   }
   choosemoviename: any = {
-    moviename:'',
-    ticketcost:'',
-    releasedate:Date.now,
-    outdate:Date.now
+    moviename:''
   }
   movielist:any=[];
   

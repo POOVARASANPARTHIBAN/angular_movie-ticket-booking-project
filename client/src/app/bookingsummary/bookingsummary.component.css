@@ -1,10 +1,11 @@
 
 .limiter{
     margin-left: 30%;
-    margin-top: 5%;
-    max-width: 350px;
+    margin-top: 2%;
+    max-width: 100%;
     border-radius: 5px;
     text-align: center;
+    display: flex;
 
 }
 label{
@@ -27,7 +28,7 @@ label{
   input{
     height: 25px;
     width: 60%;
-    margin: 10px;
+    margin: 5px;
     border-radius: 2px;
    
   }
@@ -35,9 +36,10 @@ label{
   .container{
       background-color: rgba(240, 230, 230, 0.438);
       border: 1.5px solid green;
-      width: 550px;
+      width: 650px;
       margin-bottom: 1.5rem;
       border-radius: 10px;
+      margin-left: -30%;
     }
     .form-btn{
       width: 180px;
@@ -61,6 +63,40 @@ label{
       transition: transform 0.2s;
   }
 
+  .col{
+    margin-left: 10%;
+}
+  
+.cards{
+  width: 200px;
+  height: 230px;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 15px 35px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px 25px; 
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+  border: 1px solid white;
+  
+}
+.card1{
+  background-image: url('../../assets/images/beasT.jpg');
+}
+.card2{
+  background-image: url('../../assets/images/indian2.jpg');
+}
+.card3{
+  background-image: url('../../assets/images/visithiran.jpg');
+}
+.card4 {
+  background-image: url('../../assets/images/Thallipogathey.jpg');
+}
+.cards:hover{
+  transform: translateY(-3px);
+} 
 
 
 
