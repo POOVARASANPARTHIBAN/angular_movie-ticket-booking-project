@@ -51,11 +51,11 @@
 
                 <div class="signup">
                     <label>Mobile :</label>
-                    <input type="text" #mobile="ngModel" name="mobile" required minlength="10" [(ngModel)]="signup.mobile"
+                    <input type="tel" #mobile="ngModel" name="mobile" required minlength="10" [(ngModel)]="signup.mobile"
                         id="mobile"/>  
                         <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
-                            <div  *ngIf="address.errors?.required" style="color: red">*MOBILE is required.</div>
-                            <div  *ngIf="username.errors?.minlength" style="color: red">*At least 10 characters long.</div> 
+                            <div  *ngIf="mobile.errors?.required" style="color: red">*MOBILE is required.</div>
+                            <div  *ngIf="mobile.errors?.minlength" style="color: red">*At least 10 characters long.</div> 
                         </div>       
                 </div>
                 <br />
