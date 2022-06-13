@@ -1,10 +1,13 @@
 const connection = require("express");
 const bodyparser = require("body-parser");
-const app = connection();
+let app = connection();
 const port = 8000;
 const cors = require("cors");
 const dbconnection = require("../server/connection/db");
 const storedb = require("./connection/nanodb");
+app.disable("x-powered-by");
+let helmet = require("helmet");
+app.use(helmet.hidePoweredBy());
 app.use(connection.static("public"));
 app.use(bodyparser.json());
 app.use(
