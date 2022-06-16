@@ -1,8 +1,4 @@
 const Cloudant = require("@cloudant/cloudant");
-let app = express();
-app.disable("x-powered-by");
-let helmet = require("helmet");
-app.use(helmet.hidePoweredBy());
 let url =
   "https://75c481c7-3349-4ad5-86c0-311dd22187eb-bluemix.cloudantnosqldb.appdomain.cloud/";
 let username = "apikey-v2-2mxwaz89u58vkezj2e5jfc41xn3komuaq1j49fhhmu8p";
