@@ -34,7 +34,6 @@ import { HttpCallInterceptor } from './service/interceptors.service';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocationuploadComponent } from './components/adminhome/adminhome/locationupload/locationupload.component';
-import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,8 +61,7 @@ import { FooterComponent } from './components/footer/footer.component';
     BookingsummaryComponent,
     RetrievebookingComponent,
     MybookingsComponent,
-    LocationuploadComponent,
-    FooterComponent
+    LocationuploadComponent
     ],
   imports: [
     BrowserModule,
